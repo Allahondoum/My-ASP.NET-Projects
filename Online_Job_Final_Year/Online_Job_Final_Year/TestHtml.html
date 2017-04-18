@@ -1,0 +1,118 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <title></title>
+    <meta charset="utf-8" />
+</head>
+<body>
+    <form runat="server">
+        <asp:ScriptManager ID="ScriptManager1" runat="server"></asp:ScriptManager>
+        <nav class="navbar navbar-default">
+            <div class="navbar-header">
+                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#myNavbar">
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </button>
+            </div>
+
+            <div class="collapse navbar-collapse" id="myNavbar">
+                <ul class="nav navbar-nav navbar">
+                    <li class="active">
+                        <a href="../Default.aspx">Home</a>
+                    </li>
+                    <li>
+                        <a href="#">Live activities</a>
+                    </li>
+                    <li>
+                        <a href="#">Services</a>
+                    </li>
+                    <li>
+                        <a href="EmployersProfile.aspx" title="The Company Profile">Profile</a>
+                    </li>
+                    <li>
+                        <a href="AddPost.aspx">Add Job</a>
+                    </li>
+                    <li>
+                        <a href="ViewMyJobs.aspx">View Added Jobs</a>
+                    </li>
+                    <li>
+                        <a href="#">Companies Stories</a>
+                    </li>
+                </ul>
+                <ul class="nav navbar-nav navbar-right">
+                    <li class="dropdown">
+                        <a href="#" class="dropdown-toggle" data-toggle="dropdown"><span class="glyphicon glyphicon-user"></span>Hi,<asp:Label runat="server" ID="lblSeekerUser"></asp:Label><span class="caret"></span></a>
+                        <ul class="dropdown-menu">
+                            <li>
+                                <a href="EmployersProfile.aspx" title="The Company Profile">Profile</a>
+                            </li>
+                            <li>
+                                <a href="EmployerAccount.aspx" title="Edit Account">Edit Account</a>
+                            </li>
+                            <li>
+                                <asp:LinkButton runat="server" CausesValidation="False" OnClick="EmployerLogout"><span class="glyphicon glyphicon-log-in"></span>Logout</asp:LinkButton>
+                            </li>
+
+                        </ul>
+                    </li>
+                </ul>
+            </div>
+        </nav>
+        <div class="container body-content">
+            <asp:ContentPlaceHolder runat="server" ID="EmployerMainContent">
+            </asp:ContentPlaceHolder>
+        </div>
+
+        <footer class="panel-footer" id="nav-footer">
+            <div class="container">
+                <p class="pull-right">
+                    <a href="#">Back to top</a>
+                </p>
+                <div class="container">
+
+                    <div class="fmenu1">
+                        <div class="flex-list">
+                            <ul>
+                                <li><a href="#">How it works?</a></li>
+                                <li><a href="#">Terms & Conditions</a></li>
+                                <li><a href="#">Privacy and Policies</a></li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="flex-list">
+                        <div class="fmenu2">
+                            <ul>
+                                <li><a href="#">FAQs</a></li>
+                                <li><a href="#">About Us</a></li>
+                                <li><a href="#">Contact Us</a></li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="fmenu3">
+                        <ul>
+                            <li><a href="#" title="facebook"><i class="fa fa-facebook-square fa-2x" aria-hidden="true"></i></a></li>
+                            <li><a href="#" title="twitter"><i class="fa fa-twitter fa-2x" aria-hidden="true"></i></a></li>
+                            <li><a href="#" title="instagram"><i class="fa fa-instagram fa-2x" aria-hidden="true"></i></a></li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+            <nav class="navbar navbar-default" id="footerlast">
+                <p class="pull-right ">
+                    <a href="#">Back to top</a>
+                </p>
+                <p class="pull-left">
+                    &copy; <%: DateTime.Now.Year %> - Online Job Search by Allahondoum Innocent &middot; <a href="~/Default.aspx">Home</a>
+
+                </p>
+            </nav>
+
+        </footer>
+
+        <script src="../Scripts/jquery-3.1.1.js"></script>
+        <script src="../Content/js/bootstrap.min.js"></script>
+    </form>
+
+</body>
+</html>

@@ -1,0 +1,300 @@
+﻿html,body {
+    font-family: "open sans", "Helvetica Neue", Helvetica, Arial, sans-serif;
+    background: #f3f3f4;
+    color: #676a6c;
+    height: 100%;
+    width: 100%;
+    font-size: 14px;
+     position: relative;
+    
+}
+.mainbgcolor {
+     background-color: #e95420;
+}
+.SearchBar {
+    background-color: #e95420 !important;
+    padding: 30px 30px 30px 30px;
+    border-radius: 10px;
+    font-size: 18px;
+    
+}
+#nav-header {
+    min-height: 75px;
+	background-color: #e95420 !important;
+	border: 1px solid #f3f3f4;
+	font-size: 14px;
+	padding-top: 10px;
+}
+#dash-nav-header {
+	min-height: 30px !important;
+	border: 1px solid #f3f3f4;
+	background-color: #e95420;
+	font-size: 14px;
+	margin-bottom: 0px;
+	border-radius: 0px;
+}
+.admin-header {
+	background-color: #333333;
+	color: #ffffff;
+	padding-bottom: 10px;
+	margin-bottom: 15px;
+
+}
+#side-menu {
+    background-color:#f4a460 ;
+    width: 200px;
+    height: 100%;
+}
+.affix {
+    top: 50px;
+    bottom: 10px;
+    padding-bottom: 10px
+}
+#nav-footer
+{
+	border: 1px solid #f3f3f4;
+	background-color: #ffffff;
+	font-family: "open sans","Helvetica Neue", Helvetica,Arial,sans-serif;
+	font-size: 14px;
+	min-height: 100%;
+	text-align: center;
+	position: relative;
+	z-index: 3;
+	padding: 30px 0 0;
+}
+#nav-footer ul li >a
+{
+	list-style: none;
+	text-decoration: none;
+	color: #e95420 ;
+	font-size: 14px;
+
+}
+#footerlast
+{
+	height: 20px;
+	margin-bottom: 0px;
+	padding-top: 20px;
+	position: absolute;
+	width: 100%;
+	font-size: 14px;
+    color: #ffffff;
+}
+#footerlast a
+{
+	list-style: none;
+	text-decoration: none;
+	color: #ffffff;
+}
+#nav-footer ul li a:hover, ul li a:focus {
+ color: #333333;
+}
+#footerlast a:hover {
+    color: #333333; 
+}
+.White-back {
+    background-color: #ffffff !important;
+    margin-bottom: 10px;
+}
+.fmenu1
+{
+	margin: 0 0 15px;
+}
+.fmenu1 li
+{
+	display: inline;
+	padding: 0 15px;
+	position: relative;
+}
+.fmenu2 li
+{
+	display: inline;
+	padding: 0 15px;
+	position: relative;
+}
+.fmenu3 li
+{
+	display: inline;
+	padding: 0 15px;
+	position: relative;
+}
+.flex-list li {
+    flex-grow: 1;
+    flex-basis: auto;
+    margin: .25em 0;
+    padding: 0 1em;
+    text-align: center;
+    border-left: 1px solid #ccc;
+}
+.MainTitle {
+    font-size: 50px;
+    
+    text-align: center;
+    color: #e95420;
+    
+}
+.subTitle1 {
+    font-size: 70px;
+    color: #e95420;
+    font-weight: 600;
+    
+}
+.subTitle2 {
+    font-size: 60px;
+    color: #3b3b3b;
+    font-weight: 600;
+    
+}
+.subTitle3 {
+    font-size: 60px;
+    color: #ff0000;
+    font-weight: 600;
+    
+}
+.Registration-box {
+ 
+    max-width: 650px;
+    min-width: 100px;
+    border: 1px solid #ccc;
+    margin: 0 auto 100px;
+    box-shadow: 2px 2px 5px 0 rgba(191, 191, 191, 1);
+    background: #fdfdfd;
+}
+.Registration-box-2 {
+    max-width: 500px;
+    min-width: 100px;
+    border: 1px solid #ccc;
+    margin: 0 auto 100px;
+    box-shadow: 2px 2px 5px 0 rgba(191, 191, 191, 1);
+    background: #fdfdfd;
+    padding: 20px 20px 20px 20px;
+}
+.breadcrumb {
+    background-color: #ffffff;
+}
+.search-result-box {
+    width: 100%;
+    min-width: 100px;
+    border: 1px solid #ccc;
+    padding: 20px;
+    margin-bottom: 20px;
+    background-color: #ffffff;
+    box-shadow: 1px 2px 2px #e95420;
+}
+.Right-Side-JobDetails {
+    margin-right: 10px;
+    border: 1px solid #ccc;
+    box-shadow: 1px 2px 2px #e95420;
+    height: 100%;
+    
+}
+.Main-Side-JobDetails {
+    width: 800px;
+    border: 1px solid #ccc;
+   
+}
+.Posted-date {
+    width: 500px;
+    border: 1px solid #ccc;
+    padding: 20px;
+    margin-bottom: 20px;
+}
+.Job-Titre {
+    font-size: 22px;
+    font-family: 'Open Sans', arial, helvetica;
+    font-weight: 600;
+}
+.Company-Nom {
+    font-family: 'Open Sans', arial, helvetica;
+    font-weight: 600;
+    font-size: 18px;
+    color: #3b3b3b;
+    padding-top: 2px;
+    padding-bottom: 15px;
+}
+.Search-Details-Right {
+    float: right;
+}
+.Job-Category {
+
+    font-size: 18px;
+    font-family: 'Open Sans', arial, helvetica;
+    font-weight: 600;
+}
+.Profile-box {
+    width: 700px;
+    min-width: 100px;
+    padding: 20px;
+    padding-left: 20px;
+    margin-bottom: 20px;
+}
+.fullname{
+    font-size: 28px;
+    font-family: 'Open Sans', arial, helvetica;
+    font-weight: bolder;
+    color:  #e95420;
+}
+.Company-Name {
+    font-family: 'Open Sans', arial, helvetica;
+    font-weight: 600;
+    font-size: 18px;
+    color: #3b3b3b;
+    padding-top: 2px;
+    padding-bottom: 15px;
+}
+.Category {
+
+    font-size: 24px;
+    color:  #e95420;
+    font-weight: bolder;
+    font-family: 'Open Sans', arial, helvetica;
+    
+}
+.items {
+    font-weight: bold;
+    font-size: 14px;
+}
+.item-label {
+    font-weight: bold;
+    font-size: 14px;
+}
+.menu {
+    padding-right: 0;
+    padding-top: 50px;
+}
+.mainContent {
+    padding: 2%;
+    padding-right: 25px;
+    overflow: visible;
+    padding-top: 55px;
+}
+.user-box {
+     width: auto;
+    border: 1px solid #ccc;
+    margin-bottom: 20px;
+    box-shadow: 1px 2px 2px #e95420;
+}
+#page-wrapper {
+  min-height: 568px;
+  background-color: white;
+}
+
+@media (min-width: 768px) {
+  #page-wrapper {
+    position: inherit;
+    border-left: 1px solid #e7e7e7;
+  }
+}
+@media(min-width: 768px) {
+    .affix {
+        position: fixed;
+    }
+}
+@media(max-width: 768px) {
+    .affix {
+        position: static;
+    }
+    .side-menu {
+        padding-right: 50px;
+    }
+}

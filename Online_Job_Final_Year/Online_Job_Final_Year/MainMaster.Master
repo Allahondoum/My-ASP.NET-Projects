@@ -1,0 +1,145 @@
+﻿<%@ Master Language="C#" AutoEventWireup="true" CodeBehind="MainMaster.master.cs" Inherits="Online_Job_Final_Year.MainMaster" %>
+
+<!DOCTYPE html>
+
+<html lang="en">
+<head runat="server">
+    <meta charset="utf-8"/>
+
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://netdna.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+    <link href="Content/css/normalize.css" rel="stylesheet" />
+    <link href="Content/css/bootstrapValidator.css" rel="stylesheet" />
+    <link href="Content/css/bootstrap.css" rel="stylesheet"/>
+    
+    <link href="Content/css/bootstrap.min.css" rel="stylesheet"/>
+
+    <link href="Content/MyStyle.css" rel="stylesheet" />
+
+    
+    <title><%: Page.Title %> - Online Job Search & Recruitment</title>
+    <asp:ContentPlaceHolder ID="head" runat="server">
+        <!-- use modernizr-->
+    </asp:ContentPlaceHolder>
+    <style type="text/css">
+        
+        .affix {
+            top: 0;
+            width: 100%;
+        }
+
+        .affix + .container-fluid {
+             padding-top: 70px;
+        }
+         
+    </style>
+</head>
+<body>
+<form runat="server" ID="formValidator">
+    <asp:ScriptManager ID="ScriptManager1" runat="server"></asp:ScriptManager>
+
+
+    <nav class="navbar navbar-default navbar-fixed-top" id="nav-header">
+        <div class="navbar-header">
+            <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#myNavbar">
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+            </button>
+            <a class="navbar-brand" href="Default.aspx">MingaKidme</a>
+        </div>
+
+        <div class="collapse navbar-collapse" id="myNavbar">
+            <ul class="nav navbar-nav navbar">
+                <li class="active">
+                    <a href="Default.aspx">HOME</a>
+                </li>
+                <li>
+                    <a href="JobSearchResult.aspx">FIND A JOB</a>
+                </li>
+                <li>
+                    <a href="EmployerRegistration.aspx">FOR EMPLOYERS</a>
+                </li>
+                <li>
+                    <a href="#">CAREER ADVICE</a>
+                </li>
+                <li>
+                    <a href="#">ABOUT US</a>
+                </li>
+                <li>
+                    <a href="#">CONTACT US</a>
+                </li>
+            </ul>
+            <ul class="nav navbar-nav navbar-right" style="margin-right: 20px">
+                <li>
+                    <a href="MainSignUp.aspx"><span class="glyphicon glyphicon-user"></span> SIGN UP</a>
+                </li>
+                <li>
+                    <a href="MainLogin.aspx"><span class="glyphicon glyphicon-log-in"></span> LOGIN</a>
+                </li>
+            </ul>
+        </div>
+    </nav>
+
+    <div style="padding-top: 70px">
+            <asp:ContentPlaceHolder runat="server" ID="PageContainer1">
+            </asp:ContentPlaceHolder>
+
+    </div>
+    <div class="container" style="padding-top: 70px">
+        <asp:ContentPlaceHolder runat="server" ID="PageContainer2">
+        </asp:ContentPlaceHolder>
+    </div>
+    <footer class="panel-footer" id="nav-footer">
+        <div class="container">
+            <p class="pull-right">
+                <a href="#">Back to top</a>
+            </p>
+            <div class="container">
+        
+            <div class="fmenu1">
+            <div class="flex-list">
+                <ul>
+                    <li><a href="#">How it works?</a></li>
+                    <li><a href="#">Terms & Conditions</a></li>
+                    <li><a href="#">Privacy and Policies</a></li>
+                </ul>
+            </div>
+              </div>
+              <div class="flex-list">
+            <div class="fmenu2">
+                <ul>
+                    <li><a href="#">FAQs</a></li>
+                    <li><a href="#">About Us</a></li>
+                    <li><a href="#">Contact Us</a></li>
+                </ul>
+            </div>
+            </div>
+            <div class="fmenu3">
+                <ul>
+                    <li><a href="#" title="facebook"><i class="fa fa-facebook-square fa-2x" aria-hidden="true"></i></a></li>
+                    <li><a href="#" title="twitter"><i class="fa fa-twitter fa-2x" aria-hidden="true"></i></a></li>
+                     <li><a href="#" title="instagram"><i class="fa fa-instagram fa-2x" aria-hidden="true"></i></a></li>
+                </ul>
+            </div>
+            </div>
+            </div>
+            <nav class="navbar navbar-default" id="footerlast">
+                    <p class="pull-right ">
+                        <a href="#">Back to top</a>
+                    </p>
+                             <p class="pull-left">&copy; <%: DateTime.Now.Year %> - Online Job Search by Allahondoum Innocent &middot; <a href="~/Default.aspx">Home</a>&middot; <a href="AdminLogin.aspx">Administrator</a>
+
+                    </p>
+            </nav>
+        
+    </footer>
+    <script src="Scripts/jquery-3.1.1.min.js"></script>
+    <script src="Content/js/bootstrap.min.js"></script>
+    <script src="Content/js/bootstrapValidator.js"></script>
+</form>
+
+</body>
+</html>
