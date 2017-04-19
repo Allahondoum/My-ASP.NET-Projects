@@ -1,0 +1,284 @@
+﻿/* Move down content because we have a fixed navbar that is 50px tall */
+html, body {
+    font-family: "open sans", "Helvetica Neue", Helvetica, Arial, sans-serif;
+    font-size: 14px;
+    height: 100%;
+    width: 100%;
+}
+
+.dl-horizontal dt { white-space: normal; }
+
+/* Set widths on the form inputs since otherwise they're 100% wide */
+
+input[type="text"],
+input[type="password"],
+input[type="email"],
+input[type="tel"],
+input[type="select"] { max-width: 280px; }
+
+/* Responsive: Portrait tablets and up */
+
+@media screen and (min-width: 768px) {
+    .jumbotron { margin-top: 20px; }
+
+    .body-content { padding: 0; }
+}
+
+.container-1 {
+    position: relative;
+    vertical-align: middle;
+    white-space: nowrap;
+    width: 100%;
+}
+
+.container-1 input#search::-webkit-input-placeholder { color: #65737e; }
+
+.container-1 input#search:-moz-placeholder { /* Firefox 18- */
+    color: #65737e;
+}
+
+.container-1 input#search::-moz-placeholder { /* Firefox 19+ */
+    color: #65737e;
+}
+
+.container-1 input#search:-ms-input-placeholder { color: #65737e; }
+
+.container-1 .icon {
+    color: #4f5b66;
+    margin-left: 17px;
+    margin-top: 17px;
+    position: absolute;
+    top: 50%;
+    z-index: 1;
+}
+
+.container-1 input#search:hover, .container-1 input#search:focus, .container-1 input#search:active {
+    background: #ffffff;
+    outline: none;
+}
+
+.Form-box {
+ 
+    background: #fdfdfd;
+    border: 1px solid #ccc;
+    box-shadow: 2px 2px 5px 0 rgba(191, 191, 191, 1);
+    margin: 0 auto 100px;
+    max-width: 650px;
+    min-width: 100px;
+}
+
+.Form-box-2 {
+    background: #fdfdfd;
+    border: 1px solid #ccc;
+    box-shadow: 2px 2px 5px 0 rgba(191, 191, 191, 1);
+    margin: 0 auto 100px;
+    max-width: 500px;
+    min-width: 100px;
+    padding: 20px 20px 20px 20px;
+}
+
+.Profile-box {
+    margin-bottom: 20px;
+    min-width: 100px;
+    padding: 20px;
+    width: 700px;
+}
+
+.Posted-date {
+    border: 1px solid #ccc;
+    margin-bottom: 20px;
+    padding: 20px;
+    width: 500px;
+}
+
+.Fullname {
+    color: #006400;
+    font-family: 'Open Sans', arial, helvetica;
+    font-size: 28px;
+    font-weight: bolder;
+}
+
+.Company-Name {
+    color: #3b3b3b;
+    font-family: 'Open Sans', arial, helvetica;
+    font-size: 18px;
+    font-weight: 600;
+    padding-bottom: 15px;
+    padding-top: 2px;
+}
+
+.Search-Details-Right { float: right; }
+
+.Category {
+
+    color: #006400;
+    font-family: 'Open Sans', arial, helvetica;
+    font-size: 24px;
+    font-weight: bolder;    
+}
+
+.items-color {
+    color: #006400;
+    font-size: 18px;
+}
+
+.center { text-align: center; }
+
+.center-page {
+    bottom: 0;
+    height: 300px;
+    left: 0;
+    margin: auto;
+    position: absolute;
+    right: 0;
+    top: -40px;
+    width: 300px;
+}
+
+.space-vert { margin-top: 20px; }
+
+.footer-pos {
+    bottom: 0;
+    height: auto;
+    left: 0;
+    margin: auto;
+    position: absolute;
+    right: 0;
+    top: 600px;
+    width: auto;
+}
+
+body { padding-top: 50px; }
+
+/*products.aspx*/
+
+.probrand {
+    font-family: sans-serif;
+    font-size: 15px;
+    font-weight: 600;
+    line-height: 15px;
+    text-transform: uppercase;
+}
+
+.proName {
+    font-family: sans-serif;
+    font-size: 13px;
+    line-height: 17px;
+}
+
+.proPrice {
+    font-family: sans-serif;
+    font-size: 14px;
+    font-weight: 600;
+    line-height: 17px;
+}
+
+.proOgPrice {
+    color: gray;
+    font-family: sans-serif;
+    font-size: 13px;
+    font-weight: 400;
+    text-decoration: line-through;
+}
+
+.proPriceDiscount {
+    color: deeppink;
+    font-family: sans-serif;
+    font-size: 13px;
+    font-weight: 400;
+}
+
+/*productview*/
+
+.proNameView {
+    color: #696e80;
+    font-family: sans-serif;
+    font-size: 20px;
+    font-weight: 600;
+    line-height: 25px;
+}
+
+.proOgPriceView {
+    color: gray;
+    font-family: sans-serif;
+    font-size: 15px;
+    font-weight: 400;
+    text-decoration: line-through;
+}
+
+.proPriceDiscountView {
+    color: deeppink;
+    font-family: sans-serif;
+    font-size: 15px;
+    font-weight: 400;
+}
+
+.proPriceView {
+    font-family: sans-serif;
+    font-size: 16px;
+    font-weight: 600;
+    line-height: 17px;
+    margin-top: 10px
+}
+
+.divDet1 {
+    border-bottom: 1px dashed #D5D6D8;
+    margin-bottom: 20px;
+}
+
+.h5Size { font-weight: 600; }
+
+input[type=radio] {
+    margin-left: 10px;
+    margin-right: 10px;
+}
+
+.mainButton {
+    background-color: #FF5722;
+    border: 1px solid #FF5722;
+    border-radius: 3px;
+    color: #fff;
+    font-size: 13px;
+    font-weight: 500;
+    margin-bottom: 20px;
+    margin-top: 10px;
+    outline: 0;
+}
+
+.Registration-box {
+ 
+    border: 1px solid #ccc;
+    box-shadow: 2px 2px 5px 0 rgba(191, 191, 191, 1);
+    margin: 0 auto 100px;
+    max-width: 650px;
+    min-width: 100px;
+    padding: 10px;
+}
+
+.SearchBar {
+    background-color: #419641;
+    border-radius: 10px;
+    font-size: 18px;
+    margin-left: 20px;
+    margin-right: 50px;
+    padding: 30px;    
+}
+
+.SearchContent {
+    background-image: url('../Images/Slides/slide-2.png');
+    background-position: top;
+    background-repeat: no-repeat;
+    background-size: cover;
+    height: 500px;
+}
+
+.searchArea { padding-top: 50px; }
+
+.MainTitle {
+    color: #fdfdfd;
+    font-size: 50px;
+    font-weight: bold;
+    padding-top: 100px;
+    text-align: center
+}
+

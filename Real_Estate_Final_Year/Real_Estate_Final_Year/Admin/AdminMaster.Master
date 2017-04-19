@@ -1,0 +1,69 @@
+﻿<%@ Master Language="C#" AutoEventWireup="true" CodeBehind="AdminMaster.master.cs" Inherits="Real_Estate_Final_Year.Admin.AdminMaster" %>
+
+<!DOCTYPE html>
+
+<html lang="en">
+<head runat="server">
+	<meta charset="utf-8"/>
+	<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+	<link href="../Content/css/bootstrap.css" rel="stylesheet" />
+	<link href="../Content/css/bootstrap.min.css" rel="stylesheet" />
+	<link href="../Content/Site.css" rel="stylesheet" />
+	
+	<title><%: Page.Title %> - Real Estate Management</title>
+</head>
+<body>
+	<form id="form2" runat="server">
+		<asp:ScriptManager ID="ScriptManager1" runat="server"></asp:ScriptManager>
+		<nav class="navbar navbar-inverse">
+			
+			<div class="navbar-header">
+				<button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#myNavbar">
+					<span class="icon-bar"></span>
+					<span class="icon-bar"></span>
+					<span class="icon-bar"></span>
+				</button>
+				<a class="navbar-brand" href="Default.aspx">RealEstate</a>
+			</div>
+
+			<div class="collapse navbar-collapse" id="myNavbar">
+				<ul class="nav navbar-nav navbar">
+					<li class="active"><a href="Default.aspx">Home</a></li>
+					<li><a href="#">Our Offers</a></li>
+					<li><a href="#">Our Services</a></li>
+					<li><a href="#">Buyers</a></li>
+					<li><a href="#">Agents</a></li>
+					<li><a href="#">About</a></li>
+					<li><a href="#">Contact</a></li>
+					<li>
+						<div class="navbar-form" role="search">
+							<div class="input-group">
+								<asp:TextBox ID="txtsearch" runat="server" placeholder="Search this site" class="form-control"></asp:TextBox>
+								<span class="input-group-btn">
+									<asp:LinkButton runat="server" ID="lbsearch" ToolTip="Search" CssClass="btn btn-default"
+										Text='<i class="glyphicon glyphicon-search"></i>' />
+								</span>
+							</div>
+						</div>
+					</li>
+				</ul>
+				<ul class="nav navbar-nav navbar-right">
+					<li><a href="RegistrationPage.aspx" ><span class="glyphicon glyphicon-user"></span>Sign Up</a></li>
+					<li><a href="Login.aspx"><span class="glyphicon glyphicon-log-in"></span>Login</a></li>
+				</ul>
+			</div>
+		</nav>
+		<div class="container body-content">
+		<asp:ContentPlaceHolder ID="MainContent" runat="server">
+			</asp:ContentPlaceHolder>
+			</div>
+	 <div class="container body-content">
+			<footer>
+				<p>&copy; <%: DateTime.Now.Year %> - Real Estate Management</p>
+			</footer>
+		</div>
+		<script src="../Scripts/jquery-3.1.1.js"></script>
+		<script src="../Content/js/bootstrap.min.js"></script>
+		</form>
+</body>
+</html>
