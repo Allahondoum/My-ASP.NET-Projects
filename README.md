@@ -1,3 +1,3 @@
 # My-ASP.NET-Projects
 
-This is an online job recruitment and job search web application.
+Asp.net projects on e-Job search and Real Estate search
