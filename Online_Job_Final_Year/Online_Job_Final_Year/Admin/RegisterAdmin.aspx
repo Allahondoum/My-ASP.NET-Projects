@@ -3,7 +3,7 @@
 <asp:Content ID="Content2" ContentPlaceHolderID="MyAdminMainContent" runat="server">
 
             <asp:MultiView runat="server" ID="RegisAdminMultiView">
-                
+
                 <asp:View ID="DetailsView" runat="server">
 
                     <div class="container Registration-box">
@@ -54,7 +54,7 @@
                                     <asp:TextBox ID="txtUsername" runat="server" Class="form-control" placeholder="Username"></asp:TextBox>
                                     <asp:RequiredFieldValidator ID="RequiredFieldValidatorusername" CssClass="text-danger" runat="server" ErrorMessage="The  field is Required !" ControlToValidate="txtUsername"></asp:RequiredFieldValidator>
                                 </p>
-                                
+
                             </div>
                             <div class="col-md-6">
                                 <p>
@@ -98,7 +98,7 @@
 
                                 </p>
 
-                               
+
 
 
                                 <p>
@@ -118,9 +118,9 @@
                                 </p>
 
 
-                                
+
                             </div>
-                            
+
                             </div>
                         <p>
                                     <asp:Button ID="btnRegAdmin" runat="server" Class="btn btn-success form-control" Text="Sign Up" OnClick="btnRegAdmin_Click"/>

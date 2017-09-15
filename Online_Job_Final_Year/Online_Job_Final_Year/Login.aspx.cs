@@ -10,24 +10,37 @@ namespace Online_Job_Final_Year
         private readonly SqlConnection con =
             new SqlConnection(ConfigurationManager.ConnectionStrings["OnlineJobDBConStr"].ToString());
 
+        MyGlobalClasses gc = new MyGlobalClasses();
+
         protected void Page_Load(object sender, EventArgs e)
         {
             if (!IsPostBack)
-                if (Request.Cookies["CookSeekerUname"] != null && Request.Cookies["CookSeekerPassword"] != null)
+            {
+                if (Session["SeekerUsrname"] != null)
                 {
-                    txtUserName.Text = Request.Cookies["CookSeekerUname"].Value;
-                    txtPassword.Attributes["value"] = Request.Cookies["CookSeekerPassword"].Value;
-                    RememberMe.Checked = true;
+                    Response.Redirect("~/JobSeeker/JobSeekerProfile.aspx");
                 }
+                else
+                {
+                    if (Request.Cookies["CookSeekerUname"] != null && Request.Cookies["CookSeekerPassword"] != null)
+                    {
+                        txtUserName.Text = Request.Cookies["CookSeekerUname"].Value;
+                        txtPassword.Attributes["value"] = gc.Decrypt(Request.Cookies["CookSeekerPassword"].Value);
+                        RememberMe.Checked = true;
+                    }
+                }
+
+            }
         }
 
         protected void btnLogin_Click(object sender, EventArgs e)
         {
+            var pass = gc.Encrypt(txtPassword.Text);
             try
             {
                 con.Open();
-                var chkusr = "select * from SeekerLogin where Username ='" + txtUserName.Text + "' and Password ='" +
-                             txtPassword.Text + "'";
+                var chkusr = "select * from JobSeeKerProfile where Username ='" + txtUserName.Text + "' and Password ='" +
+                            pass + "'";
 
                 var cmd = new SqlCommand(chkusr, con);
                 var dr = cmd.ExecuteReader();
@@ -38,10 +51,10 @@ namespace Online_Job_Final_Year
                         if (RememberMe.Checked)
                         {
                             Response.Cookies["CookSeekerUname"].Value = txtUserName.Text;
-                            Response.Cookies["CookSeekerPassword"].Value = txtPassword.Text;
+                            Response.Cookies["CookSeekerPassword"].Value = pass;
 
-                            Response.Cookies["CookSeekerUname"].Expires = DateTime.Now.AddDays(-1);
-                            Response.Cookies["CookSeekerPassword"].Expires = DateTime.Now.AddDays(-1);
+                            Response.Cookies["CookSeekerUname"].Expires = DateTime.Now.AddDays(1);
+                            Response.Cookies["CookSeekerPassword"].Expires = DateTime.Now.AddDays(1);
                         }
                         else
                         {

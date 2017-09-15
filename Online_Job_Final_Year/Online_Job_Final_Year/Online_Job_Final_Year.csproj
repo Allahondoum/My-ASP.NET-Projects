@@ -43,6 +43,10 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="AjaxControlToolkit, Version=16.1.1.0, Culture=neutral, PublicKeyToken=28f01b0e84b6d53e, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>C:\Users\inno\Documents\ASP.NET AJAX Control Toolkit\Bin\AjaxControlToolkit.dll</HintPath>
+    </Reference>
     <Reference Include="CKEditor.NET">
       <HintPath>..\ckeditor_aspnet_3.6.6.2\bin\Release\CKEditor.NET.dll</HintPath>
     </Reference>
@@ -69,16 +73,32 @@
     <Reference Include="System.EnterpriseServices" />
   </ItemGroup>
   <ItemGroup>
+    <Content Include="About-Us.aspx" />
     <Content Include="Admin\AddCities.aspx" />
     <Content Include="Admin\AddJobSpecialization.aspx" />
     <Content Include="Admin\Dashboard.aspx" />
     <Content Include="AllJobs.aspx" />
+    <Content Include="Carreer-advice.aspx" />
+    <Content Include="Contact-Us.aspx" />
+    <Content Include="Content\css\bootstrap-wysihtml5.css" />
     <Content Include="Content\css\bootstrapValidator.css" />
+    <Content Include="Content\css\font-awesome.min.css" />
     <Content Include="Content\css\jquery.dataTables.min.css" />
     <Content Include="Content\css\normalize.css" />
+    <Content Include="Content\css\pages.css" />
+    <Content Include="Content\fonts\fontawesome-webfont3e6e.html" />
+    <Content Include="Content\fonts\fontawesome-webfont3e6e.svg" />
     <Content Include="Content\js\bootstrapValidator.js" />
     <Content Include="Content\js\jquery-1.11.0.min.js" />
+    <Content Include="Content\js\script.js" />
+    <Content Include="Content\plugins\bootstrap-wysihtml5\css\bootstrap-wysihtml5.css" />
+    <Content Include="Content\plugins\bootstrap-wysihtml5\js\bootstrap-wysihtml5.js" />
+    <Content Include="Content\plugins\bootstrap-wysihtml5\js\wysihtml5-0.3.0.js" />
+    <Content Include="ForgetPassword.aspx" />
+    <Content Include="Images\favicon.ico" />
+    <Content Include="Images\job.png" />
     <Content Include="Images\Partners.jpg" />
+    <Content Include="JobSeeker\Profile_jobseeker.aspx" />
     <Content Include="JobSubmission.aspx" />
     <Content Include="packages.config" />
     <Content Include="Content\css\bootstrap-theme.css.map" />
@@ -92,6 +112,10 @@
     <Content Include="Employers\EmployerMaster.Master" />
     <Content Include="Employers\EmployerWeb.config" />
     <Content Include="MainMaster.Master" />
+    <Content Include="Content\fonts\fontawesome-webfont3e6e.eot" />
+    <Content Include="Content\fonts\fontawesome-webfont3e6e.ttf" />
+    <Content Include="Content\fonts\fontawesome-webfont3e6e.woff" />
+    <Content Include="Content\fonts\fontawesome-webfontd41d.eot" />
     <None Include="Scripts\jquery-1.4.4-vsdoc.js" />
     <Content Include="Scripts\jquery-1.4.4.js" />
     <Content Include="Scripts\jquery-1.4.4.min.js" />
@@ -108,7 +132,7 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="AdminLogin.aspx" />
-    <Content Include="Admin\AddCountry.aspx" />
+    <Content Include="Admin\AddLocation.aspx" />
     <Content Include="Admin\AdminProfile.aspx" />
     <Content Include="Admin\ManageEmployers.aspx" />
     <Content Include="Admin\ManageJobSeekers.aspx" />
@@ -161,10 +185,18 @@
     <Content Include="Scripts\sb-admin-2.js" />
     <Content Include="Scripts\sb-admin-2.min.js" />
     <Content Include="Scripts\Sidebar-Control.js" />
+    <Content Include="SubmissionForm.aspx" />
     <Content Include="TestHtml.html" />
     <Content Include="Web.config" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="About-Us.aspx.cs">
+      <DependentUpon>About-Us.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="About-Us.aspx.designer.cs">
+      <DependentUpon>About-Us.aspx</DependentUpon>
+    </Compile>
     <Compile Include="AdminLogin.aspx.cs">
       <DependentUpon>AdminLogin.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -186,12 +218,12 @@
     <Compile Include="Admin\AddJobSpecialization.aspx.designer.cs">
       <DependentUpon>AddJobSpecialization.aspx</DependentUpon>
     </Compile>
-    <Compile Include="Admin\AddCountry.aspx.cs">
-      <DependentUpon>AddCountry.aspx</DependentUpon>
+    <Compile Include="Admin\AddLocation.aspx.cs">
+      <DependentUpon>AddLocation.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
-    <Compile Include="Admin\AddCountry.aspx.designer.cs">
-      <DependentUpon>AddCountry.aspx</DependentUpon>
+    <Compile Include="Admin\AddLocation.aspx.designer.cs">
+      <DependentUpon>AddLocation.aspx</DependentUpon>
     </Compile>
     <Compile Include="Admin\AdminProfile.aspx.cs">
       <DependentUpon>AdminProfile.aspx</DependentUpon>
@@ -248,6 +280,20 @@
     </Compile>
     <Compile Include="AllJobs.aspx.designer.cs">
       <DependentUpon>AllJobs.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Carreer-advice.aspx.cs">
+      <DependentUpon>Carreer-advice.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Carreer-advice.aspx.designer.cs">
+      <DependentUpon>Carreer-advice.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Contact-Us.aspx.cs">
+      <DependentUpon>Contact-Us.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Contact-Us.aspx.designer.cs">
+      <DependentUpon>Contact-Us.aspx</DependentUpon>
     </Compile>
     <Compile Include="Default.aspx.cs">
       <DependentUpon>Default.aspx</DependentUpon>
@@ -319,6 +365,13 @@
     <Compile Include="Employers\ViewMyJobs.aspx.designer.cs">
       <DependentUpon>ViewMyJobs.aspx</DependentUpon>
     </Compile>
+    <Compile Include="ForgetPassword.aspx.cs">
+      <DependentUpon>ForgetPassword.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="ForgetPassword.aspx.designer.cs">
+      <DependentUpon>ForgetPassword.aspx</DependentUpon>
+    </Compile>
     <Compile Include="JobSeekerRegistration.aspx.cs">
       <DependentUpon>JobSeekerRegistration.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -360,6 +413,13 @@
     </Compile>
     <Compile Include="JobSeeker\Lives Activities.aspx.designer.cs">
       <DependentUpon>Lives Activities.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="JobSeeker\Profile_jobseeker.aspx.cs">
+      <DependentUpon>Profile_jobseeker.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="JobSeeker\Profile_jobseeker.aspx.designer.cs">
+      <DependentUpon>Profile_jobseeker.aspx</DependentUpon>
     </Compile>
     <Compile Include="JobSeeker\SeekerTest.aspx.cs">
       <DependentUpon>SeekerTest.aspx</DependentUpon>
@@ -410,6 +470,7 @@
     <Compile Include="MainSignUp.aspx.designer.cs">
       <DependentUpon>MainSignUp.aspx</DependentUpon>
     </Compile>
+    <Compile Include="MyGlobalClasses.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="JobDetails.aspx.cs">
       <DependentUpon>JobDetails.aspx</DependentUpon>
@@ -418,11 +479,19 @@
     <Compile Include="JobDetails.aspx.designer.cs">
       <DependentUpon>JobDetails.aspx</DependentUpon>
     </Compile>
+    <Compile Include="SubmissionForm.aspx.cs">
+      <DependentUpon>SubmissionForm.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="SubmissionForm.aspx.designer.cs">
+      <DependentUpon>SubmissionForm.aspx</DependentUpon>
+    </Compile>
   </ItemGroup>
   <ItemGroup>
     <Folder Include="Content\DataTable\css\" />
     <Folder Include="Content\DataTable\images\" />
     <Folder Include="Content\DataTable\js\" />
+    <Folder Include="JobSeeker\CVs\" />
     <Folder Include="Jobs\" />
   </ItemGroup>
   <PropertyGroup>

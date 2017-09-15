@@ -9,9 +9,7 @@
     <link href="../Content/css/bootstrap.css" rel="stylesheet"/>
     <link href="../Content/css/bootstrap.min.css" rel="stylesheet"/>
     <link href="../Content/MyStyle.css" rel="stylesheet" />
-    <asp:ContentPlaceHolder ID="head" runat="server">
-        <!-- use modernizr-->
-    </asp:ContentPlaceHolder>
+    <link rel="shortcut icon" href="../Images/job.png">
     <style type="text/css">
         .icon-bar {
             height: 101px;
@@ -31,10 +29,10 @@
                     <span class="icon-bar"></span>
                     <span class="icon-bar"></span>
                 </button>
-                <a href="~/Default.aspx" class="navbar-brand">e-JOB</a>
+                <a href="~/Default.aspx" class="navbar-brand">OnlineJob</a>
             </div>
             <div id="navbar" class="collapse navbar-collapse">
-               <ul class="nav navbar-nav navbar-right">
+               <ul class="nav navbar-nav navbar-right" style="margin-right: 20px">
                             <li class="dropdown">
                             <a href="#" class="dropdown-toggle" data-toggle="dropdown"><span class="glyphicon glyphicon-user"></span>Hi,<asp:Label runat="server" ID="lblAdminUser"></asp:Label><span class="caret"></span></a>
                             <ul class="dropdown-menu">
@@ -68,18 +66,18 @@
                             <a href="#collapseProfile" aria-expanded="false" aria-controls="collapseProfile" class="list-group-item" data-toggle="collapse">
 
                                 <span class="glyphicon glyphicon-home" aria-hidden="true"></span>
-                                    Profile            
+                                    Profile
                                 <span class="glyphicon glyphicon-menu-right pull-right"></span></a>
 
                             <div class="collapse list-group" id="collapseProfile" style="padding-left: 10px">
-                                <a class="list-group-item list-group-item-action" href="JobSeekerProfile.aspx"><span class="glyphicon glyphicon-user" aria-hidden="true"></span>View Profile</a>
+                                <a class="list-group-item list-group-item-action" href="JobSeekerProfile.aspx"><span class="glyphicon glyphicon-user" aria-hidden="true"></span> View Profile</a>
 
-                                <a class="list-group-item list-group-item-action" href="EditJobSeekerProfile.aspx"><span class="glyphicon glyphicon-edit" aria-hidden="true"></span>Edit Profile</a>
+                                <a class="list-group-item list-group-item-action" href="EditJobSeekerProfile.aspx"><span class="glyphicon glyphicon-edit" aria-hidden="true"></span> Edit Profile</a>
 
 
-                                <a class="list-group-item list-group-item-action" href="JobSeekerAccount.aspx"><span class="glyphicon glyphicon-tasks" aria-hidden="true"></span>Edit Account</a>
+                                <a class="list-group-item list-group-item-action" href="JobSeekerAccount.aspx"><span class="glyphicon glyphicon-tasks" aria-hidden="true"></span> Edit Account</a>
 
-                                <a class="list-group-item list-group-item-action" href="#"><span class="glyphicon glyphicon-trash" aria-hidden="true"></span>Delete Account</a>
+                                <a class="list-group-item list-group-item-action" href="#"><span class="glyphicon glyphicon-trash" aria-hidden="true"></span> Delete Account</a>
                             </div>
                             <!--Manage Admin-->
                             <a href="#ManageAdmin" aria-expanded="false" aria-controls="ManageAdmin" data-toggle="collapse" class="list-group-item">
@@ -88,15 +86,12 @@
                                 <span class="glyphicon glyphicon-menu-right pull-right"></span>
                             </a>
                             <div class="collapse list-group" id="ManageAdmin" style="padding-left: 10px">
-                                <a class="list-group-item list-group-item-action" href="#"><span class="glyphicon glyphicon-user" aria-hidden="true"></span>Applied Job</a>
-                                <a class="list-group-item list-group-item-action" href="#"><span class="glyphicon glyphicon-tasks" aria-hidden="true"></span>Preferred Job</a>
+                                <a class="list-group-item list-group-item-action" href="#"><span class="glyphicon glyphicon-user" aria-hidden="true"></span> Applied Job</a>
+                                <a class="list-group-item list-group-item-action" href="#"><span class="glyphicon glyphicon-tasks" aria-hidden="true"></span> Preferred Job</a>
                             </div>
-                            
-                            <!--Manage Details-->
-                            <a href="#AddDetails" aria-expanded="false" aria-controls="AddDetails" class="list-group-item" data-toggle="collapse">
-                                <span class="glyphicon glyphicon-tasks" aria-hidden="true"></span> Add Details<span class="glyphicon glyphicon-menu-right pull-right">
-                                    
-                                </span></a>
+
+                            <!--Logout-->
+
                             <a runat="server" href="#" OnServerClick="JobSeekerlogout" class="list-group-item"><span class="glyphicon glyphicon-log-out" aria-hidden="true"></span> Logout</a>
                         </div>
                         <!--For some activities in progress can change the color by changing this'progress-bar-warning'-->
@@ -104,7 +99,7 @@
                     </div>
                 </div>
                 <div class="col-md-10">
-                    <div class="container-fluid" style="padding-top: 30px">
+                    <div style="padding-top: 30px">
                         <asp:ContentPlaceHolder ID="EmpMainContent" runat="server">
                         </asp:ContentPlaceHolder>
                     </div>
@@ -118,7 +113,7 @@
             </div>
         </div>
     </footer>
-    
+
     <script src="../Scripts/jquery-3.1.1.min.js"></script>
     <script src="../Content/js/bootstrap.min.js"></script>
 </form>

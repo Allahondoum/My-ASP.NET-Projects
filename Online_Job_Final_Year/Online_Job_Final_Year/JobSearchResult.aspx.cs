@@ -2,7 +2,6 @@
 using System.Configuration;
 using System.Data;
 using System.Data.SqlClient;
-using System.Reflection.Emit;
 using System.Web.UI.WebControls;
 using Label = System.Web.UI.WebControls.Label;
 
@@ -12,10 +11,12 @@ namespace Online_Job_Final_Year.Jobs
     {
         private readonly SqlConnection con =
             new SqlConnection(ConfigurationManager.ConnectionStrings["OnlineJobDBConStr"].ToString());
-        
+        MyGlobalClasses gc = new MyGlobalClasses();
 
         protected void Page_Load(object sender, EventArgs e)
         {
+            gc.bindLocation(drpLocation);
+            gc.bindSpecialization(drpSpecial);
             Default prv = this.PreviousPage;
             if (prv != null && prv.IsCrossPagePostBack)
             {
@@ -23,14 +24,14 @@ namespace Online_Job_Final_Year.Jobs
                 {
                     //SearchResultData();
                     SearchResultGetDataSet();
-                    
+
                 }
                 catch (Exception ex)
                 {
                     Response.Write(ex.Message);
-                   
+
                 }
-                
+
             }
             else
             {
@@ -43,21 +44,38 @@ namespace Online_Job_Final_Year.Jobs
                 catch (Exception ex)
                 {
                     Response.Write(ex);
-                    
+
                 }
-               
+
+            }
+            if (Request.QueryString["item"] != null)
+            {
+
+                    BindJobByCompanies();
+            }
+            else if(Request.QueryString["name"] != null)
+            {
+                BindJobByLoc();
+            }
+            else if (Request.QueryString["cat"] != null)
+            {
+                BindJobByCategory();
             }
         }
+
         private void SearchResultGetDataSet()
         {
 
-            
+
             Default prv = this.PreviousPage;
             var jobname = prv.Job;
             var joblocation = prv.Location;
 
             //var qry = "select * from PostedJobs where Specialization = '" + jobname + "' and Location = '"+ joblocation + "'";
-            var qr = "select * from PostedJobs where Specialization like '%" + jobname + "%' and Location like '%" + joblocation + "%'";
+            //var qr = "select * from PostedJobs where Specialization like '%" + jobname + "%' and Location like '%" + joblocation + "%'";
+
+            var qr = "select * from PostedJobs where JobTitle like '%" + jobname + "%' or Specialization like '%" + jobname + "%' and Location = '" + joblocation + "'";
+
 
             // var all = "select * from PostedJobs";
             var sda = new SqlDataAdapter(qr, con);
@@ -70,6 +88,69 @@ namespace Online_Job_Final_Year.Jobs
              con.Close();
         }
 
+        private void BindJobByCompanies()
+        {
+            try
+            {
+                con.Open();
+                var compName = Request.QueryString["item"];
+
+                var qry = "select * from PostedJobs where CompanyName = '" + compName + "'";
+                var dal =
+                new SqlDataAdapter(qry, con);
+                var ds = new DataSet();
+                dal.Fill(ds);
+                SearchRslt.DataSource = ds;
+                SearchRslt.DataBind();
+                con.Close();
+            }
+            catch (Exception ex)
+            {
+                Response.Write(ex.Message);
+            }
+        }
+        private void BindJobByLoc()
+        {
+            try
+            {
+                con.Open();
+                var locName = Request.QueryString["name"];
+
+                var qry = "select * from PostedJobs where Location = '" + locName + "'";
+                var dal =
+                new SqlDataAdapter(qry, con);
+                var ds = new DataSet();
+                dal.Fill(ds);
+                SearchRslt.DataSource = ds;
+                SearchRslt.DataBind();
+                con.Close();
+            }
+            catch (Exception ex)
+            {
+                Response.Write(ex.Message);
+            }
+        }
+        private void BindJobByCategory()
+        {
+            try
+            {
+                con.Open();
+                var catName = Request.QueryString["cat"];
+
+                var qry = "select * from PostedJobs where Location = '" + catName + "'";
+                var dal =
+                new SqlDataAdapter(qry, con);
+                var ds = new DataSet();
+                dal.Fill(ds);
+                SearchRslt.DataSource = ds;
+                SearchRslt.DataBind();
+                con.Close();
+            }
+            catch (Exception ex)
+            {
+                Response.Write(ex.Message);
+            }
+        }
         private void SearchResultData()
         {
             Default prv = this.PreviousPage;
@@ -93,10 +174,10 @@ namespace Online_Job_Final_Year.Jobs
             SearchRslt.DataBind();
 
             con.Close();
-    }
-            
+        }
+
         private DataSet GetDataSet()
-        { 
+        {
                 var dal =
                 new SqlDataAdapter(
                     "select * from PostedJobs", con);
@@ -104,8 +185,8 @@ namespace Online_Job_Final_Year.Jobs
                 dal.Fill(ds);
 
                 lblSearchTitle.Text = "All Jobs";
-                
-            
+
+
             return ds;
         }
 
@@ -120,6 +201,11 @@ namespace Online_Job_Final_Year.Jobs
                 lblEmpty.Visible = true;
                 //Label lblEmpty = (Label)e.Item.FindControl("lblEmptymss");
             }
+        }
+
+        protected void pagerlnk_OnClick(object sender, EventArgs e)
+        {
+
         }
     }
 }

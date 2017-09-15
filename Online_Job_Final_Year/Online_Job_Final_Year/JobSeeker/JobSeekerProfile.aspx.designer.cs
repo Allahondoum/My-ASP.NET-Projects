@@ -31,6 +31,15 @@ namespace Online_Job_Final_Year.JobSeeker {
         protected global::System.Web.UI.WebControls.Label lblLastName;
         
         /// <summary>
+        /// lblSepcialization control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Label lblSepcialization;
+        
+        /// <summary>
         /// lblGender control.
         /// </summary>
         /// <remarks>
@@ -103,12 +112,12 @@ namespace Online_Job_Final_Year.JobSeeker {
         protected global::System.Web.UI.WebControls.Label lblYearOfExp;
         
         /// <summary>
-        /// lblSepcialization control.
+        /// lblCV control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Label lblSepcialization;
+        protected global::System.Web.UI.WebControls.LinkButton lblCV;
     }
 }

@@ -76,6 +76,15 @@ namespace Online_Job_Final_Year.Jobs {
         protected global::System.Web.UI.WebControls.Repeater SearchRslt;
         
         /// <summary>
+        /// rptrPager control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Repeater rptrPager;
+        
+        /// <summary>
         /// PreviousPage property.
         /// </summary>
         /// <remarks>

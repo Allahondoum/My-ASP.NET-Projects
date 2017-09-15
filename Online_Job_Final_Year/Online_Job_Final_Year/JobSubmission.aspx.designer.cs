@@ -13,6 +13,15 @@ namespace Online_Job_Final_Year {
     public partial class JobSubmission {
         
         /// <summary>
+        /// lblalert control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Label lblalert;
+        
+        /// <summary>
         /// FirstName control.
         /// </summary>
         /// <remarks>
@@ -103,33 +112,6 @@ namespace Online_Job_Final_Year {
         protected global::System.Web.UI.WebControls.RadioButton UseMyAccountCV;
         
         /// <summary>
-        /// rbCoverYes control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.RadioButton rbCoverYes;
-        
-        /// <summary>
-        /// rbCoverNo control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.RadioButton rbCoverNo;
-        
-        /// <summary>
-        /// txtCoverLetter control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox txtCoverLetter;
-        
-        /// <summary>
         /// btnSubmitApplication control.
         /// </summary>
         /// <remarks>
@@ -137,6 +119,15 @@ namespace Online_Job_Final_Year {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.Button btnSubmitApplication;
+        
+        /// <summary>
+        /// btnSubmitApp control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Button btnSubmitApp;
         
         /// <summary>
         /// rptrJobSummary control.

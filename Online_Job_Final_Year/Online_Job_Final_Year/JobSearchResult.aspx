@@ -14,9 +14,6 @@
                         <asp:Label runat="server" AssociatedControlID="drpSpecial">Specialization: </asp:Label>
                         <p>
                             <asp:DropDownList ID="drpSpecial" runat="server" CssClass="form-control">
-                                <asp:ListItem>Engineering</asp:ListItem>
-                                <asp:ListItem>Information Technology</asp:ListItem>
-                                <asp:ListItem>NGO</asp:ListItem>
                             </asp:DropDownList>
                         </p>
                     </div>
@@ -35,10 +32,6 @@
                         <asp:Label runat="server" AssociatedControlID="drpLocation">Location: </asp:Label>
                         <p>
                             <asp:DropDownList ID="drpLocation" runat="server" CssClass="form-control">
-                                <asp:ListItem>Location</asp:ListItem>
-                                <asp:ListItem>Accra</asp:ListItem>
-                                <asp:ListItem>Kumasi</asp:ListItem>
-                                <asp:ListItem>Cape-Coast</asp:ListItem>
                             </asp:DropDownList>
                         </p>
                     </div>
@@ -136,6 +129,13 @@
                     </ul>
                 </div>
                     </FooterTemplate>
+                </asp:Repeater>
+                <asp:Repeater runat="server" ID="rptrPager">
+                    <ItemTemplate>
+                        <asp:LinkButton runat="server" ID="pagerlnk" Text='<%#Eval("Text") %>' CommandArgument='<%#Eval("Value") %>'
+                            CssClass='<%# Convert.ToBoolean(Eval("Enabled")) ?"page_enabled":"page_disable" %>' OnClick="pagerlnk_OnClick"
+                            OnClientClick='<%# !Convert.ToBoolean(Eval("Enabled"))?"return false;":"" %>'></asp:LinkButton>
+                    </ItemTemplate>
                 </asp:Repeater>
             </div>
         </div>

@@ -1,9 +1,17 @@
-﻿<%@ Page Language="C#" AutoEventWireup="true" MasterPageFile="MainMaster.Master" CodeBehind="JobSubmission.aspx.cs" Inherits="Online_Job_Final_Year.JobSubmission" %>
+﻿<%@ Page Title="Submit Application" Language="C#" AutoEventWireup="true" EnableEventValidation="true" MasterPageFile="MainMaster.Master" CodeBehind="JobSubmission.aspx.cs" Inherits="Online_Job_Final_Year.JobSubmission" %>
 
 <asp:Content runat="server" ContentPlaceHolderID="PageContainer1">
-    <div class="container">
+    <div class="container" style="padding-top: 50px">
         <div class="row">
-            
+            <asp:Label runat="server" ID="lblalert" Visible="False">
+                <div class="alert alert-danger">
+			        <a href="#" class="close" data-dismiss="alert" aria-label="close">&times;</a>
+			        <center>
+				        <strong>Form submitted successful</strong>
+				     </center>
+		        </div>
+            </asp:Label>
+            <p class="h2" style="padding-left: 20px">Submit Application</p>
             <!--Submission Form-->
             <div class="col-md-8">
                 <!--Personal Details-->
@@ -49,7 +57,7 @@
                                <p><Label>Country: </Label></p>
                             <p>
                                 <asp:DropDownList CssClass="form-control" ID="drpSeekerCountry" runat="server" ToolTip="Select the location where live">
-                                   
+
                                 </asp:DropDownList>
                                 <br />
                                 <asp:RequiredFieldValidator runat="server" ControlToValidate="drpSeekerCountry"
@@ -58,7 +66,7 @@
 
                         </div>
                 </div>
-                
+
                 <!--Professional Details-->
                 <div class="panel panel-primary">
                     <div class="panel-heading">
@@ -110,57 +118,17 @@
                                 </p>
                                 </div>
                             </div>
-                        
+
                     </div>
                 </div>
-                 <div class="panel panel-primary">
-                    <div class="panel-heading">
-                        <h3 class="panel-title">Write Cover Letter</h3>
-                        </div>
-                        <div class="panel-body" style="padding-left: 30px">
-                            <p>
-                                    <asp:RadioButton runat="server" CssClass="radio" ID="rbCoverYes" onclick="showHideDiv()" GroupName="chkCoverLetter"/> Yes
-                                </p>
-                            <p>
-                                    <asp:RadioButton runat="server" CssClass="radio" ID="rbCoverNo" onclick="showHideDiv()" GroupName="chkCoverLetter"/> No
-                                </p>
-                            </div>
-                     <div style="padding: 20px; display: none" id="divCoverLetter">
-                         <asp:TextBox runat="server" TextMode="MultiLine" ID="txtCoverLetter" CssClass="form-control"></asp:TextBox>
-                     </div>
-                        
-                     </div>
                 <p>
-                    <asp:Button runat="server" CssClass="btn btn-primary form-control" CausesValidation="False" ID="btnSubmitApplication" OnClick="btnSubmitApplication_OnClick" Text="Submit Application"/>
+                    <asp:Button runat="server" CssClass="btn btn-primary form-control" ID="btnSubmitApplication" Text="Submit Application" OnClick="btnSubmitApplication_Click"/>
+                </p>
+                <p>
+                    <asp:Button runat="server" ID="btnSubmitApp" Text="Submit" CssClass="btn btn-block btn-primary" OnClick="btnSubmitApp_OnClick"/>
                 </p>
             </div>
-            <script type="text/javascript">
-               //function showHideDiv() {
-               //var chkYes = document.getElementById("rbCoverYes");
-               //var chkNo = document.getElementById("rbCoverNo");
 
-               //var txtTextArea = document.getElementById("divCoverLetter");
-               //if (chkYes.checked) {
-               //    txtTextArea.style.display = "block";
-               //} else {
-               //    txtTextArea.style.display = "none";
-                //}
-                $(":radio").on('click',
-                    function() {
-                        if ($(this).getElementById("rbCoverYes")) {
-                            $('.divCoverLetter').show('slow');
-                        }
-                            
-                        else {
-                            $('.divCoverLetter').hide();
-                        }
-                    })
-
-               
-
-
-                
-            </script>
             <!--Job summary-->
             <div class="col-md-4">
                 <asp:Repeater runat="server" ID="rptrJobSummary">
@@ -190,10 +158,10 @@
                         </div>
                     </div>
                     </ItemTemplate>
-                    
+
                 </asp:Repeater>
-               
-                
+
+
             </div>
         </div>
     </div>

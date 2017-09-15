@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Configuration;
 using System.Data.SqlClient;
+using System.IO;
 using System.Web.UI;
 
 namespace Online_Job_Final_Year.JobSeeker
@@ -35,60 +36,72 @@ namespace Online_Job_Final_Year.JobSeeker
 
         protected void Page_Load(object sender, EventArgs e)
         {
-            // if (Session["SeekerUsrname"] != null)
-            //{
+               if (Session["SeekerUsrname"] != null)
+               {
 
 
-            try
-            {
-                var chkusr = "select * from JobSeekerProfile where Username='" + (string) Session["SeekerUsrname"] + "'";
-                con.Open();
-                var cmd = new SqlCommand(chkusr, con);
-                var dr = cmd.ExecuteReader();
-
-                if (dr.Read())
+                try
                 {
-                    //string dob = ;
-                    var dt = Convert.ToDateTime(dr["DOB"].ToString());
+                    var chkusr = "select * from JobSeekerProfile where Username='" + (string) Session["SeekerUsrname"] + "'";
+                    con.Open();
+                    var cmd = new SqlCommand(chkusr, con);
+                    var dr = cmd.ExecuteReader();
 
-                    var birth = dt.ToString("dd/MM/yyyy");
+                    if (dr.Read())
+                    {
+                            //string dob = ;
+                            var dt = Convert.ToDateTime(dr["DOB"].ToString());
 
-
-                    //ToString("dd-MM-yyyy");
-
-                    //string birth = ((DateTime)(dob)).
-
-
-                    lblFirstName.Text = dr["Fname"].ToString();
-                    lblLastName.Text = dr["Lname"].ToString();
-                    lblEmail.Text = dr["Email"].ToString();
-                    lblDOB.Text = birth;
-                    lblGender.Text = dr["Gender"].ToString();
-                    lblHighestEdu.Text = dr["HighestEducation"].ToString();
-                    lblLocation.Text = dr["Location"].ToString();
-                    lblPhone.Text = dr["Phone"].ToString();
-                    lblSepcialization.Text = dr["Specialization"].ToString();
-                    lblYearOfExp.Text = dr["YearOfExperience"].ToString();
-                    lblSalary.Text = dr["Salary"].ToString();
+                            var birth = dt.ToString("dd/MM/yyyy");
 
 
-                    Session["SeekerName"] = dr["Fname"].ToString();
+                            //ToString("dd-MM-yyyy");
+
+                            //string birth = ((DateTime)(dob)).
+
+
+                            lblFirstName.Text = dr["Fname"].ToString();
+                            lblLastName.Text = dr["Lname"].ToString();
+                            lblEmail.Text = dr["Email"].ToString();
+                            lblDOB.Text = birth;
+                            lblGender.Text = dr["Gender"].ToString();
+                            lblHighestEdu.Text = dr["HighestEducation"].ToString();
+                            lblLocation.Text = dr["Location"].ToString();
+                            lblPhone.Text = dr["Phone"].ToString();
+                            lblSepcialization.Text = dr["Specialization"].ToString();
+                            lblYearOfExp.Text = dr["YearOfExperience"].ToString();
+                            lblSalary.Text = dr["Salary"].ToString();
+
+                            var f = dr["CV"].ToString();
+                            lblCV.Text = f;
+                            lblCV.CommandArgument = f;
+
+                        Session["SeekerName"] = dr["Fname"].ToString();
+                    }
+                    else
+                    {
+                        Response.Write("No information to display");
+                    }
+                    con.Close();
                 }
-                else
+                catch (Exception ex)
                 {
-                    Response.Write("No information to display");
+                    Response.Redirect(ex.Message);
                 }
-                con.Close();
             }
-            catch (Exception ex)
+            else
             {
-                Response.Redirect(ex.Message);
+                Response.Redirect("~/Login.aspx");
             }
-            /* }
-             else
-             {
-                 Response.Redirect("~/Login.aspx");
-             }*/
+        }
+
+        protected void lblCV_OnClick(object sender, EventArgs e)
+        {
+            Response.Clear();
+            Response.ContentType = "application/octect-stream";
+            Response.AppendHeader("content-disposition", "filename=" + lblCV.CommandArgument);
+            Response.TransmitFile(Server.MapPath("~/JobSeeker/CVs/") + lblCV.CommandArgument);
+            Response.End();
         }
     }
 }

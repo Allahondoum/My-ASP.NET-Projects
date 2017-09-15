@@ -76,15 +76,6 @@ namespace Online_Job_Final_Year {
         protected global::System.Web.UI.WebControls.Button btnLogin;
         
         /// <summary>
-        /// lbForgotPass control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.LinkButton lbForgotPass;
-        
-        /// <summary>
         /// btnLinkSignUp control.
         /// </summary>
         /// <remarks>

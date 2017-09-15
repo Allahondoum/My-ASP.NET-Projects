@@ -9,6 +9,7 @@ namespace Online_Job_Final_Year
     {
         private readonly SqlConnection con =
             new SqlConnection(ConfigurationManager.ConnectionStrings["OnlineJobDBConStr"].ToString());
+        MyGlobalClasses gc = new MyGlobalClasses();
 
         protected void Page_Load(object sender, EventArgs e)
         {
@@ -19,9 +20,9 @@ namespace Online_Job_Final_Year
             try
             {
                 con.Open();
-                var chkusr = "select * from AdminLogin where Username ='" + txtUserName.Text + "' and Password ='" +
-                             txtPassword.Text + "'";
-
+                /*var chkusr = "select * from AdminLogin where Username ='" + txtUserName.Text + "' and Password ='" +
+                            gc.Encrypt(txtPassword.Text) + "'";*/
+                var chkusr = "select * from AdminLogin where Username ='" + txtUserName.Text + "' and Password ='" +txtPassword.Text + "'";
                 var cmd = new SqlCommand(chkusr, con);
                 var dr = cmd.ExecuteReader();
 

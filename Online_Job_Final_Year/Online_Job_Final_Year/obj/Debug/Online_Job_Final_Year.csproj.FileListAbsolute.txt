@@ -13,10 +13,30 @@ D:\Inno Projects & Courses\BSc IT Bluecrest\BSc IT Sem 7\Final Year Project\The 
 D:\Inno Projects & Courses\BSc IT Bluecrest\BSc IT Sem 7\Final Year Project\The Projects\Online_Job_Final_Year\Online_Job_Final_Year\bin\Online_Job_Final_Year.dll.config
 D:\Inno Projects & Courses\BSc IT Bluecrest\BSc IT Sem 7\Final Year Project\The Projects\Online_Job_Final_Year\Online_Job_Final_Year\bin\Online_Job_Final_Year.dll
 D:\Inno Projects & Courses\BSc IT Bluecrest\BSc IT Sem 7\Final Year Project\The Projects\Online_Job_Final_Year\Online_Job_Final_Year\bin\Online_Job_Final_Year.pdb
-D:\Inno Projects & Courses\BSc IT Bluecrest\BSc IT Sem 7\Final Year Project\The Projects\Online_Job_Final_Year\Online_Job_Final_Year\bin\CKEditor.NET.dll
+D:\Inno Projects & Courses\BSc IT Bluecrest\BSc IT Sem 7\Final Year Project\The Projects\Online_Job_Final_Year\Online_Job_Final_Year\bin\AjaxControlToolkit.dll
 D:\Inno Projects & Courses\BSc IT Bluecrest\BSc IT Sem 7\Final Year Project\The Projects\Online_Job_Final_Year\Online_Job_Final_Year\bin\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.dll
-D:\Inno Projects & Courses\BSc IT Bluecrest\BSc IT Sem 7\Final Year Project\The Projects\Online_Job_Final_Year\Online_Job_Final_Year\bin\CKEditor.NET.pdb
 D:\Inno Projects & Courses\BSc IT Bluecrest\BSc IT Sem 7\Final Year Project\The Projects\Online_Job_Final_Year\Online_Job_Final_Year\bin\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.xml
 D:\Inno Projects & Courses\BSc IT Bluecrest\BSc IT Sem 7\Final Year Project\The Projects\Online_Job_Final_Year\Online_Job_Final_Year\obj\Debug\Online_Job_Final_Year.csprojResolveAssemblyReference.cache
 D:\Inno Projects & Courses\BSc IT Bluecrest\BSc IT Sem 7\Final Year Project\The Projects\Online_Job_Final_Year\Online_Job_Final_Year\obj\Debug\Online_Job_Final_Year.dll
 D:\Inno Projects & Courses\BSc IT Bluecrest\BSc IT Sem 7\Final Year Project\The Projects\Online_Job_Final_Year\Online_Job_Final_Year\obj\Debug\Online_Job_Final_Year.pdb
+E:\BSc IT Bluecrest\BSc IT Sem 7\Final Year Project\The Projects\Online_Job_Final_Year\Online_Job_Final_Year\bin\roslyn\csc.exe
+E:\BSc IT Bluecrest\BSc IT Sem 7\Final Year Project\The Projects\Online_Job_Final_Year\Online_Job_Final_Year\bin\roslyn\Microsoft.Build.Tasks.CodeAnalysis.dll
+E:\BSc IT Bluecrest\BSc IT Sem 7\Final Year Project\The Projects\Online_Job_Final_Year\Online_Job_Final_Year\bin\roslyn\Microsoft.CodeAnalysis.CSharp.dll
+E:\BSc IT Bluecrest\BSc IT Sem 7\Final Year Project\The Projects\Online_Job_Final_Year\Online_Job_Final_Year\bin\roslyn\Microsoft.CodeAnalysis.dll
+E:\BSc IT Bluecrest\BSc IT Sem 7\Final Year Project\The Projects\Online_Job_Final_Year\Online_Job_Final_Year\bin\roslyn\Microsoft.CodeAnalysis.VisualBasic.dll
+E:\BSc IT Bluecrest\BSc IT Sem 7\Final Year Project\The Projects\Online_Job_Final_Year\Online_Job_Final_Year\bin\roslyn\Microsoft.CSharp.Core.targets
+E:\BSc IT Bluecrest\BSc IT Sem 7\Final Year Project\The Projects\Online_Job_Final_Year\Online_Job_Final_Year\bin\roslyn\Microsoft.VisualBasic.Core.targets
+E:\BSc IT Bluecrest\BSc IT Sem 7\Final Year Project\The Projects\Online_Job_Final_Year\Online_Job_Final_Year\bin\roslyn\System.Collections.Immutable.dll
+E:\BSc IT Bluecrest\BSc IT Sem 7\Final Year Project\The Projects\Online_Job_Final_Year\Online_Job_Final_Year\bin\roslyn\System.Reflection.Metadata.dll
+E:\BSc IT Bluecrest\BSc IT Sem 7\Final Year Project\The Projects\Online_Job_Final_Year\Online_Job_Final_Year\bin\roslyn\vbc.exe
+E:\BSc IT Bluecrest\BSc IT Sem 7\Final Year Project\The Projects\Online_Job_Final_Year\Online_Job_Final_Year\bin\roslyn\VBCSCompiler.exe
+E:\BSc IT Bluecrest\BSc IT Sem 7\Final Year Project\The Projects\Online_Job_Final_Year\Online_Job_Final_Year\bin\roslyn\VBCSCompiler.exe.config
+E:\BSc IT Bluecrest\BSc IT Sem 7\Final Year Project\The Projects\Online_Job_Final_Year\Online_Job_Final_Year\bin\Online_Job_Final_Year.dll.config
+E:\BSc IT Bluecrest\BSc IT Sem 7\Final Year Project\The Projects\Online_Job_Final_Year\Online_Job_Final_Year\bin\Online_Job_Final_Year.dll
+E:\BSc IT Bluecrest\BSc IT Sem 7\Final Year Project\The Projects\Online_Job_Final_Year\Online_Job_Final_Year\bin\Online_Job_Final_Year.pdb
+E:\BSc IT Bluecrest\BSc IT Sem 7\Final Year Project\The Projects\Online_Job_Final_Year\Online_Job_Final_Year\bin\AjaxControlToolkit.dll
+E:\BSc IT Bluecrest\BSc IT Sem 7\Final Year Project\The Projects\Online_Job_Final_Year\Online_Job_Final_Year\bin\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.dll
+E:\BSc IT Bluecrest\BSc IT Sem 7\Final Year Project\The Projects\Online_Job_Final_Year\Online_Job_Final_Year\bin\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.xml
+E:\BSc IT Bluecrest\BSc IT Sem 7\Final Year Project\The Projects\Online_Job_Final_Year\Online_Job_Final_Year\obj\Debug\Online_Job_Final_Year.csprojResolveAssemblyReference.cache
+E:\BSc IT Bluecrest\BSc IT Sem 7\Final Year Project\The Projects\Online_Job_Final_Year\Online_Job_Final_Year\obj\Debug\Online_Job_Final_Year.dll
+E:\BSc IT Bluecrest\BSc IT Sem 7\Final Year Project\The Projects\Online_Job_Final_Year\Online_Job_Final_Year\obj\Debug\Online_Job_Final_Year.pdb

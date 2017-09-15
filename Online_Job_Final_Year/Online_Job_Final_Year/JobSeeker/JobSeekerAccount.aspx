@@ -1,4 +1,4 @@
-﻿<%@ Page Title="" Language="C#" MasterPageFile="~/JobSeeker/JobSeekerMaster.Master" AutoEventWireup="true" CodeBehind="JobSeekerAccount.aspx.cs" Inherits="Online_Job_Final_Year.JobSeeker.JobSeekerAccount" %>
+﻿<%@ Page Title="Job Seeker Account" Language="C#" MasterPageFile="~/JobSeeker/JobSeekerMaster.Master" AutoEventWireup="true" CodeBehind="JobSeekerAccount.aspx.cs" Inherits="Online_Job_Final_Year.JobSeeker.JobSeekerAccount" %>
 
 <asp:Content ID="Content2" ContentPlaceHolderID="EmpMainContent" runat="server">
     <div class="center-block" style="width: 600px">
@@ -7,12 +7,12 @@
             <div class="panel-body">
              <asp:MultiView ID="AccountUpdateMultiView" runat="server">
                 <asp:View runat="server" ID="ViewOne">
-                     
+
                         <br/>
                         <p class="text-danger">
                             <asp:Literal runat="server" ID="FailureText"/>
                         </p>
-                        
+
                             <p>
                                 <asp:Label runat="server" AssociatedControlID="txtUsername">New Username: </asp:Label>
                                 </p>
@@ -29,7 +29,7 @@
                                 <asp:RequiredFieldValidator runat="server" ID="lblPassowrdError" ControlToValidate="txtCurrentPass"
                                                             CssClass="text-danger" ErrorMessage="The current password field is required."/>
                             </p>
-                      
+
                             <p>
                                 <asp:Label runat="server" AssociatedControlID="txtNewPass">New Password: </asp:Label>
                                 </p>
@@ -39,7 +39,7 @@
                                 <asp:RequiredFieldValidator runat="server" ControlToValidate="txtNewPass"
                                                             CssClass="text-danger" ErrorMessage="The New Password field is required."/>
                             </p>
-                        
+
                             <p>
                                 <asp:Label runat="server" AssociatedControlID="txtRepassword">Re-type Password: </asp:Label>
                                 </p>
@@ -52,15 +52,15 @@
                                 <asp:RequiredFieldValidator runat="server" ControlToValidate="txtRepassword"
                                                             CssClass="text-danger" ErrorMessage="The Ret-type Password field is required."/>
                             </p>
-                       
+
                             <p>
                                 <asp:Button runat="server" CommandName="Cancel" OnClick="btn_Cancel" Text="Cancel" CssClass="btn btn-primary form-control"/>
                             </p>
-                       
+
                             <p>
                                 <asp:Button runat="server" CommandName="UpdateAccount" OnClick="btn_Update_Account" Text="Update" CssClass="btn btn-success form-control"/>
                             </p>
-                     
+
                 </asp:View>
                  <asp:View runat="server" ID="ConfirmationMessage">
 

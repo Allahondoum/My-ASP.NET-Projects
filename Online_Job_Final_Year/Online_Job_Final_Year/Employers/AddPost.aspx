@@ -4,7 +4,7 @@
     <%--<script>
         function showAltCont()
         {
-            document.getElementById().style = 
+            document.getElementById().style =
         }
     </script>--%>
 </asp:Content>
@@ -12,7 +12,7 @@
 
 <h2>SUBMIT JOB FORM</h2>
 <asp:MultiView ID="SubmitJobMultiView" runat="server">
-    
+
 <!--View One: Display the job critiria-->
 <asp:View runat="server" ID="JobDetails">
 
@@ -29,7 +29,7 @@
                         <asp:RequiredFieldValidator runat="server" ControlToValidate="txtJobTitle"
                                             CssClass="text-danger" ErrorMessage="The Job Title field is required."/>
                     </p>
-                   
+
                         <asp:Label runat="server" AssociatedControlID="txtCategory">Category<span style="color: red">*</span>: </asp:Label>
                     <p>
                         <asp:DropDownList ID="txtCategory" runat="server" CssClass="form-control" ToolTip="Select the job category">
@@ -40,8 +40,8 @@
                         </asp:DropDownList>
                 <asp:RequiredFieldValidator runat="server" ControlToValidate="txtCategory"
                                             CssClass="text-danger" ErrorMessage=" field is required."/> </p>
-                    
-                    
+
+
                  <asp:Label runat="server" AssociatedControlID="txtDescription">Description :<span style="color: red">*</span> </asp:Label>
                 <p>
                     <CKEditor:CKEditorControl ID="txtDescription" CssClass="form-control"  runat="server">
@@ -49,19 +49,22 @@
                 <asp:RequiredFieldValidator ID="txtUsernameErrMess" runat="server" ControlToValidate="txtDescription"
                                             CssClass="text-danger" ErrorMessage="The Description field is required."/>
                     </p>
-                    
+                    <p>
+                        <asp:TextBox runat="server" ID="txtDesc2" TextMode="MultiLine" CssClass="textarea_editor" />
+                    </p>
+
                     <asp:Label runat="server" AssociatedControlID="txtQualiRequirement">Requirement :<span style="color: red">*</span> </asp:Label>
                 <p>
                     <CKEditor:CKEditorControl ID="txtQualiRequirement" CssClass="form-control"  runat="server"></CKEditor:CKEditorControl>
                         <asp:RequiredFieldValidator ID="RequiredFieldValidator1" runat="server" ControlToValidate="txtQualiRequirement"
                                             CssClass="text-danger" ErrorMessage="The Description field is required."/>
-                
+
                 </p>
-                   
+
                 <asp:Button runat="server" CssClass="btn btn-default btn-block" CommandName="Step1" OnClick="btn_Next" Text="Next"/>
                 </div>
             </div>
-                
+
 
             </div>
         </div>
@@ -74,9 +77,9 @@
                     <p class="h4">Company Requirement</p>
                 </div>
                 <div class="panel-body">
-                    
+
                         <asp:Label runat="server" AssociatedControlID="txtLevel">Job Level<span style="color: red">*</span>: </asp:Label>
-                  <p>  
+                  <p>
                 <asp:DropDownList ID="txtLevel" runat="server" CssClass="form-control">
                     <asp:ListItem>None</asp:ListItem>
                     <asp:ListItem>Experienced</asp:ListItem>
@@ -87,7 +90,7 @@
                 </asp:DropDownList>
                 <asp:RequiredFieldValidator runat="server" ControlToValidate="txtLevel"
                                             CssClass="text-danger" ErrorMessage="Level field is required."/></p>
-                    
+
                 <asp:Label runat="server" AssociatedControlID="txtLocation">Location<span style="color: red">*</span>: </asp:Label>
 
                     <p>
@@ -101,7 +104,7 @@
                 </asp:DropDownList>
                 <asp:RequiredFieldValidator runat="server" ControlToValidate="txtLocation"
                                             CssClass="text-danger" ErrorMessage="Location field is required."/></p>
-                    
+
                     <asp:Label runat="server" AssociatedControlID="txtspeciality">Specialization: </asp:Label>
                 <p>
                 <asp:DropDownList ID="txtspeciality" runat="server" CssClass="form-control">
@@ -116,7 +119,7 @@
                 </asp:DropDownList>
                 <asp:RequiredFieldValidator runat="server" ControlToValidate="txtspeciality"
                                             CssClass="text-danger" ErrorMessage="Specialization field is required."/></p>
-                    
+
                     <asp:Label runat="server" AssociatedControlID="txtJobType">Job Type<span style="color: red">*</span>: </asp:Label>
                 <p>
                 <asp:DropDownList ID="txtJobType" runat="server" CssClass="form-control" ToolTip="Select the location where live">
@@ -126,7 +129,7 @@
                     <asp:ListItem>Internship</asp:ListItem>
                     <asp:ListItem>Temporary</asp:ListItem>
                 </asp:DropDownList>
-              
+
                 <asp:RequiredFieldValidator runat="server" ControlToValidate="txtJobType"
                                             CssClass="text-danger" ErrorMessage="The Job Type field is required."/></p>
 
@@ -143,7 +146,7 @@
                 </asp:DropDownList>
                 <asp:RequiredFieldValidator runat="server" ControlToValidate="txtMiniQualif"
                                             CssClass="text-danger" ErrorMessage="Minimum Education field is required."/></p>
-                    
+
                     <asp:Label runat="server" AssociatedControlID="txtPreferedYearOfExp">Prefered Year of Experience*: </asp:Label>
                 <p>
                 <asp:DropDownList ID="txtPreferedYearOfExp" runat="server" Height="30" Width="150px">
@@ -172,11 +175,11 @@
                 <br/>
                 <asp:RequiredFieldValidator runat="server" ControlToValidate="txtSalary"
                                             CssClass="text-danger" ErrorMessage="Year of Experience field is required."/></p>
-                    
+
                      <asp:Label runat="server" AssociatedControlID="txtExpiryDate">Expiry Date<span style="color: red">*</span>: </asp:Label>
                     <p>
                 <asp:TextBox runat="server" CssClass="form-control" TextMode="Date" ID="txtExpiryDate"/>
-                
+
                 <asp:RequiredFieldValidator runat="server" ControlToValidate="txtExpiryDate"
                                             CssClass="text-danger" ErrorMessage="The Expiry Date field is required."/></p>
                 <div class="row">
@@ -335,7 +338,7 @@
 </asp:View>-->
 <asp:View ID="View1" runat="server">
 
-    
+
             <div class="row">
                 <div class="col-lg-offset-4">
                     <h2>Step 3 - Confirmation </h2>
@@ -345,9 +348,9 @@
                     <asp:LinkButton runat="server" CssClass="btn btn-block btn-success" CommandName="BackToLogin" PostBackUrl="#" Text="Close"/>
                 </div>
             </div>
-                
-                
-            
+
+
+
 </asp:View>
 </asp:MultiView>
 

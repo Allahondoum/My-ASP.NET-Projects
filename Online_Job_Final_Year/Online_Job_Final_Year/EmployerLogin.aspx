@@ -3,51 +3,59 @@
 <asp:Content ID="head" ContentPlaceHolderID="head" runat="server"></asp:Content>
 
 <asp:Content ID="FirstPart" ContentPlaceHolderID="PageContainer1" runat="server">
-	<div class="container">
+   <div class="container" style="padding-top: 50px">
+	   <div class="container">
 			 <ol class="breadcrumb">
-			<li><a href="Default.aspx" title="Go to Home">Home</a></li>
-		<li><a href="Login.aspx" title="Go to Home">Login</a></li>
-			<li class="active">Employer Registration</li>
-		</ol>
-				<div class="form-horizontal">
-			 <h2>Employer login form.</h2>
-			<hr class="text-center" />
-				<p class="text-danger">
-					<asp:Literal runat="server" ID="FailureText"/>
-				</p>
-			<div class="form-group">
-				<div class="control-label col-md-2">Username</div>
-				<div class="col-md-3">
-					<asp:TextBox ID="txtUserName" CssClass="form-control" runat="server"></asp:TextBox>
-					<asp:RequiredFieldValidator ID="RequiredFieldValidatorUsername" CssClass="text-danger" ControlToValidate="txtUserName" runat="server" ErrorMessage="The Username field is required"></asp:RequiredFieldValidator>
+			    <li><a href="Default.aspx" title="Go to Home">Home</a></li>
+			    <li class="active">Employer Login</li>
+		    </ol>
+			<div class="row">
+				<div class="col-md-4 col-md-offset-4 col-sm-5 col-sm-offset-5">
+					<h2 class="text-center">Login as Employer</h2>
+					<hr />
 
-					
-				</div>
-			</div>
-			<div class="form-group">
-				<div class="control-label col-md-2">Password</div>
-				<div class="col-md-3">
-					<asp:TextBox ID="txtPassword" CssClass="form-control" runat="server" TextMode="Password"></asp:TextBox>
-					<asp:RequiredFieldValidator ID="RequiredFieldValidatortPassword" CssClass="text-danger" ControlToValidate="txtPassword" runat="server" ErrorMessage="The Password field is required"></asp:RequiredFieldValidator>
-				</div>
-			</div>
-			<div class="form-group">
-				<div class="col-md-offset-2 col-md-10">
-					<asp:CheckBox ID="RemberMe" CssClass="control-label" runat="server"/> <asp:Label runat="server" CssClass="control-label" Text="Remember me?"></asp:Label>
-				</div>
-			</div>
-			<div class="form-group">
-				<div class="col-md-offset-2 col-md-10">
-					<asp:Button ID="btnLogin" runat="server" Text="Login" CssClass="btn btn-primary" OnClick="btnLogin_Click"></asp:Button>
-				</div>
-			</div>
-			<div class="form-group">
-				<div class="col-md-2"></div>
-				<div class="col-md-6">
-					<asp:LinkButton ID="lbForgotPass" runat="server" PostBackUrl="#">Forgot Password?</asp:LinkButton> | New <asp:LinkButton ID="btnLinkSignUp" runat="server" PostBackUrl="EmployerRegistration.aspx">Sign Up</asp:LinkButton> 
+					<p class="text-danger">
+						<asp:Literal runat="server" ID="FailureText" />
+					</p>
+
+					<div class="input-group">
+
+						<span class="input-group-addon" id="basic-addon2"><span class="glyphicon glyphicon-user"></span></span>
+						<asp:TextBox ID="txtUserName" CssClass="form-control" placeholder="Username" runat="server" aria-describedby="basic-addon2"></asp:TextBox>
+					</div>
+					<span><asp:RequiredFieldValidator ID="RequiredFieldValidatorUsername" CssClass="text-danger" runat="server" ErrorMessage="The Username field is Required !" ControlToValidate="txtUserName"></asp:RequiredFieldValidator></span>
+
+					<div class="input-group">
+						<span class="input-group-addon" id="basic-addon2">
+							<span class="glyphicon glyphicon-lock
+										"></span>
+						</span>
+						<asp:TextBox ID="txtPassword" CssClass="form-control" placeholder="Passowrd" runat="server" TextMode="Password" aria-describedby="basic-addon1"></asp:TextBox>
+
+					</div>
+					<span><asp:RequiredFieldValidator ID="RequiredFieldValidatorPass" CssClass="text-danger" runat="server" ErrorMessage="The Password field is Required !" ControlToValidate="txtPassword"></asp:RequiredFieldValidator></span>
+
+					<div class="checkbox">
+						<label>
+
+
+							<asp:CheckBox ID="RememberMe" runat="server" />
+							Remember me ?
+						</label>
+					</div>
+
+					<p>
+						<asp:Button ID="btnLogin" runat="server" Text="Login" CssClass="btn btn-primary form-control" OnClick="btnLogin_Click" />
+					</p>
+					<div class="pull-left">
+						<a href="ForgetPassword.aspx" title="Forget Password">Forgot Password?</a>
+					</div>
+					<div class="pull-right">
+						New?
+						<asp:LinkButton ID="btnLinkSignUp" CausesValidation="False" runat="server" PostBackUrl="EmployerRegistration.aspx">Sign Up</asp:LinkButton>
+					</div>
 				</div>
 			</div>
 		</div>
-
 	</div>
 </asp:Content>

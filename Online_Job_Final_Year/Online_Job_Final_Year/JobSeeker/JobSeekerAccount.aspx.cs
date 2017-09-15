@@ -7,35 +7,38 @@ namespace Online_Job_Final_Year.JobSeeker
 {
     public partial class JobSeekerAccount : Page
     {
+        MyGlobalClasses gc = new MyGlobalClasses();
         protected void Page_Load(object sender, EventArgs e)
         {
             if (Session["SeekerUsrname"] != null)
                 AccountUpdateMultiView.ActiveViewIndex = 0;
             else
-                Response.Redirect("");
+                Response.Redirect("~/Login.aspx");
         }
 
         protected void btn_Update_Account(object sender, EventArgs e)
         {
+            var pass = gc.Encrypt(txtCurrentPass.Text);
+            var repass = gc.Encrypt(txtNewPass.Text);
             try
             {
                 var cnn = new SqlConnection(ConfigurationManager.ConnectionStrings["OnlineJobDBConStr"].ToString());
                 var conn = new SqlConnection(ConfigurationManager.ConnectionStrings["OnlineJobDBConStr"].ToString());
 
 
-                var chkusr = "select Username from SeekerLogin where Username ='" + (string) Session["SeekerUsrname"] +
+                var chkusr = "select Username from JobSeeKerProfile where Username ='" + (string) Session["SeekerUsrname"] +
                              "'";
                 cnn.Open();
                 var cmd1 = new SqlCommand(chkusr, cnn);
                 var dr = cmd1.ExecuteReader();
                 if (dr.HasRows)
                 {
-                    if (txtCurrentPass.Text == (string) Session["CompareSeekerPass"])
+                    if (pass == (string) Session["CompareSeekerPass"])
                     {
                         cnn.Close();
                         conn.Open();
                         var UpdateEmployerLogin =
-                            "UPDATE SeekerLogin SET Username = @Username,Password = @Password WHERE Username = '" +
+                            "UPDATE JobSeeKerProfile SET Username = @Username,Password = @Password WHERE Username = '" +
                             (string) Session["SeekerUsrname"] + "'";
                         //string UpdateProfileUsername = "UPDATE EmployerProfile SET Username = @Username WHERE UserID = '" + (string)Session["ID"] + "'";
 

@@ -10,17 +10,29 @@ namespace Online_Job_Final_Year
         private readonly SqlConnection con =
             new SqlConnection(ConfigurationManager.ConnectionStrings["OnlineJobDBConStr"].ToString());
 
+        MyGlobalClasses gc = new MyGlobalClasses();
         protected void Page_Load(object sender, EventArgs e)
         {
+            if (!IsPostBack)
+            {
+                if (Request.Cookies["CookEmpUname"] != null && Request.Cookies["CookEmpPass"] != null)
+                {
+                    txtUserName.Text = Request.Cookies["CookEmpUname"].Value;
+                    txtPassword.Attributes["value"] = Request.Cookies["CookEmpPass"].Value;
+                    RememberMe.Checked = true;
+                }
+            }
+
         }
 
         protected void btnLogin_Click(object sender, EventArgs e)
         {
+            var pass = gc.Encrypt(txtPassword.Text);
             try
             {
                 con.Open();
                 var chkusr = "select * from EmployerLogin where Username ='" + txtUserName.Text + "' and Password='" +
-                             txtPassword.Text + "'";
+                            pass + "'";
 
                 var cmd = new SqlCommand(chkusr, con);
                 var dr = cmd.ExecuteReader();
@@ -29,6 +41,19 @@ namespace Online_Job_Final_Year
                 {
                     if (dr.HasRows)
                     {
+                        if (RememberMe.Checked)
+                        {
+                            Response.Cookies["CookEmpUname"].Value = txtUserName.Text;
+                            Response.Cookies["CookEmpPass"].Value = pass;
+
+                            Response.Cookies["CookEmpUname"].Expires = DateTime.Now.AddDays(1);
+                            Response.Cookies["CookEmpPass"].Expires = DateTime.Now.AddDays(1);
+                        }
+                        else
+                        {
+                            Response.Cookies["CookEmpUname"].Expires = DateTime.Now.AddDays(-1);
+                            Response.Cookies["CookEmpPass"].Expires = DateTime.Now.AddDays(-1);
+                        }
                         //Session["EmployerName"] = dr["Fname"].ToString();
                         Session["EmployerUsername"] = dr["Username"].ToString();
                         Session["ComparePass"] = dr["Password"].ToString();
@@ -44,7 +69,7 @@ namespace Online_Job_Final_Year
                 {
                     FailureText.Text = "wrong username and password.";
                 }
-                    
+
 
                 con.Close();
             }

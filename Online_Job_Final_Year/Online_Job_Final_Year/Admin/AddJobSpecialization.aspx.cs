@@ -1,12 +1,7 @@
 ﻿using System;
-using System.Collections.Generic;
 using System.Configuration;
 using System.Data;
 using System.Data.SqlClient;
-using System.Linq;
-using System.Web;
-using System.Web.UI;
-using System.Web.UI.WebControls;
 
 namespace Online_Job_Final_Year.Admin
 {
@@ -33,10 +28,10 @@ namespace Online_Job_Final_Year.Admin
             {
                 var con = new SqlConnection(ConfigurationManager.ConnectionStrings["OnlineJobDBConStr"].ToString());
 
-               // string find = "select * from Specialization";
+               string find = "select * from Specialization";
                 con.Open();
-                SqlCommand cmd = new SqlCommand("displayPostedJob", con);
-                cmd.CommandType = CommandType.StoredProcedure;
+                SqlCommand cmd = new SqlCommand(find, con);
+               // cmd.CommandType = CommandType.StoredProcedure;
 
 
                 SqlDataAdapter da = new SqlDataAdapter();
@@ -53,9 +48,9 @@ namespace Online_Job_Final_Year.Admin
             catch (Exception exception)
             {
                 Response.Write(exception.Message);
-                
+
             }
-           
+
         }
 
         protected void Click_AddSepecial(object sender, EventArgs e)
@@ -72,7 +67,7 @@ namespace Online_Job_Final_Year.Admin
                 var dr = cmd.ExecuteReader();
                 if (dr.HasRows)
                 {
-                    
+
                     Response.Write(
                         "<script>alert('The speciality you are adding already exist.')</script>");
 
@@ -84,7 +79,7 @@ namespace Online_Job_Final_Year.Admin
                     var addSpeciality =
                         "INSERT INTO Specialization(SpecialityName) VALUES (@special)";
 
-                   
+
                     var cmd1 = new SqlCommand(addSpeciality, con);
                     cmd1.Parameters.AddWithValue("@special", txtAddSpecial.Text);
                     cmd1.ExecuteNonQuery();

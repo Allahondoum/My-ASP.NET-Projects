@@ -1,24 +1,20 @@
 ﻿using System;
-using System.Collections.Generic;
 using System.Configuration;
 using System.Data;
 using System.Data.SqlClient;
-using System.Linq;
-using System.Security.Cryptography.X509Certificates;
-using System.Web;
-using System.Web.UI;
-using System.Web.UI.WebControls;
 
 namespace Online_Job_Final_Year
 {
     public partial class JobSubmission : System.Web.UI.Page
     {
         private readonly SqlConnection con = new SqlConnection(ConfigurationManager.ConnectionStrings["OnlineJobDBConStr"].ToString());
-      
+        MyGlobalClasses gc = new MyGlobalClasses();
+
         protected void Page_Load(object sender, EventArgs e)
         {
             if (!IsPostBack)
             {
+
                 if (Session["SeekerUsrname"] != null)
                 {
                     try
@@ -27,6 +23,7 @@ namespace Online_Job_Final_Year
                         rptrJobSummary.DataSource = ds;
                         rptrJobSummary.DataBind();
                         GetSeekerData();
+                        gc.bindLocation(drpSeekerCountry);
                     }
                     catch (Exception ex)
                     {
@@ -41,10 +38,11 @@ namespace Online_Job_Final_Year
             }
             else
             {
-                Response.Redirect("");
+                Response.Redirect("JobDetails.aspx");
             }
         }
 
+        private int seekerID;
         protected void GetSeekerData()
         {
             var qry = "select * from JobSeekerProfile where Username ='"+ (string)Session["SeekerUsrname"] + "'";
@@ -61,19 +59,19 @@ namespace Online_Job_Final_Year
                 drpSeekerCountry.Text = dr["Location"].ToString();
                 HighestEducation.Text = dr["HighestEducation"].ToString();
                 YearOfExperience.Text = dr["YearOfExperience"].ToString();
-                Session["CandID"] = Convert.ToInt32(dr["SeekerID"].ToString());
+                seekerID = Convert.ToInt32(dr["SeekerID"].ToString());
             }
             else
             {
                // Response.Write("No information to display");
             }
-           
+
             con.Close();
         }
         private DataSet GetDataSet()
         {
             var jobid = Convert.ToInt32(Request.QueryString[0]);
-            
+
 
             var dal =
             new SqlDataAdapter(
@@ -84,49 +82,40 @@ namespace Online_Job_Final_Year
             dal.Fill(ds);
             // lblSearchTitle.Text = "All Jobs";
 
-            
+
             return ds;
         }
 
-      protected void btnSubmitApplication_OnClick(object sender, EventArgs e)
-
-      {
-         
-           foreach (RepeaterItem empId in rptrJobSummary.Items)
-           {
-               var empid = Convert.ToInt32((Label) empId.FindControl("lblEmpID"));
-          
-           try
-           {
-                //var add = "insert into SubmittedJob(JobID,SeekerID,EmployerID,AppliedDate,CoverLetter) values (@Jobid, @Seekid,@Empid,@AppliedDate,@letter)";
-                var seekid = Convert.ToInt32(Session["CandID"]);
-                
-
-
+        protected void btnSubmitApplication_Click(object sender, EventArgs e)
+        {
+            DateTime dt = DateTime.Today.Date;
+            try
+            {
+                var add = "insert into SubmittedJob(JobID,SeekerID,AppliedDate) values (@Jobid, @Seekid,@date)";
                 var jobid = Convert.ToInt32(Request.QueryString[0]);
-                var seekname = FirstName.Text + " " + LastName.Text;
                 con.Open();
 
-                var cmd = new SqlCommand("insrtSubJobs", con);
-                cmd.CommandType = CommandType.StoredProcedure;
+                var cmd = new SqlCommand(add, con);
 
                 cmd.Parameters.AddWithValue("@Jobid", jobid);
-                cmd.Parameters.AddWithValue("@Seekid", seekid);
-                cmd.Parameters.AddWithValue("@Empid", empid);
-                cmd.Parameters.AddWithValue("@letter", txtCoverLetter.Text);
-                
-                    
+                cmd.Parameters.AddWithValue("@Seekid", seekerID);
+                cmd.Parameters.AddWithValue("@date", dt);
+
+
 
                 cmd.ExecuteNonQuery();
                 con.Close();
-                    Response.Write("Submission successful");
-                }
-           catch (Exception ex)
-           {
-              Response.Write(ex.Message);
-           }
-
+                Response.Write("Submission successful");
             }
+            catch (Exception ex)
+            {
+                Response.Write(ex.Message);
+            }
+        }
+
+        protected void btnSubmitApp_OnClick(object sender, EventArgs e)
+        {
+            lblalert.Visible = true;
         }
     }
 }

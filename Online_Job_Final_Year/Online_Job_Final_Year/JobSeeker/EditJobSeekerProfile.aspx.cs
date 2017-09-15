@@ -8,12 +8,16 @@ namespace Online_Job_Final_Year.JobSeeker
     public partial class EditJobSeekerProfile : Page
     {
         //SqlConnection con = new SqlConnection(ConfigurationManager.ConnectionStrings["OnlineJobDBConStr"].ToString());
+        MyGlobalClasses gc = new MyGlobalClasses();
 
         protected void Page_Load(object sender, EventArgs e)
         {
-            // if (Session["EmployerUsername"]!= null)
-            // {
+           if (Session["SeekerUsrname"] != null)
+           {
             EditProfileMultiView.ActiveViewIndex = 0;
+                gc.bindLocation(Location);
+                gc.bindSpecialization(Specialization);
+
             var prevPage = PreviousPage;
 
 
@@ -64,16 +68,16 @@ namespace Online_Job_Final_Year.JobSeeker
                 {
                     Response.Redirect(ex.Message);
                 }*/
+                }
+                else
+                {
+                    Response.Redirect("~/Login.aspx");
+                }
             }
             else
             {
-                Response.Redirect("~/JobSeeker/JobSeekerProfile.aspx");
+                Response.Redirect("~/Login.aspx");
             }
-            /* }
-                 else
-                 {
-                     Response.Redirect("~/JobSeeker/JobSeekerProfile.aspx");
-                 }*/
         }
 
         protected void btn_Save_Click(object sender, EventArgs e)

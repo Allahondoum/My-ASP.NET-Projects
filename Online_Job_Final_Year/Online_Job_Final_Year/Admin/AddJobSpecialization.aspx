@@ -12,15 +12,15 @@
                     <p><asp:Button runat="server" Text="Add" ID="btnAddSpecial" CssClass="btn btn-primary" OnClick="Click_AddSepecial"/></p>
                 </div>
                 </div>
-                
-            
+
+
         </div>
-        
+
         <h3>Specialities</h3>
         <hr/>
           <div class="panel panel-default">
               <div class="panel-heading">
-                  all Specialities
+                  All Specialities
               </div>
               <asp:Repeater runat="server" ID="rptrSpecialities">
                   <HeaderTemplate>
@@ -36,7 +36,7 @@
                   <tbody>
                   </HeaderTemplate>
                   <ItemTemplate>
-                      
+
                       <tr>
                         <th><%# Eval("SpecialID")%></th>
                         <td><%# Eval("SpecialityName")%></td>
@@ -48,10 +48,10 @@
                       </tbody>
                      </table>
                   </FooterTemplate>
-                 
+
               </asp:Repeater>
-              
-                    
-               
+
+
+
           </div>
 </asp:Content>

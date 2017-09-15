@@ -1,11 +1,10 @@
 ﻿<%@ Page Title="Employer Registration" Language="C#" AutoEventWireup="true" CodeBehind="EmployerRegistration.aspx.cs" MasterPageFile="~/MainMaster.Master" Inherits="Online_Job_Final_Year.EmployerRegistration" %>
 
-
+<%@ Register assembly="AjaxControlToolkit" namespace="AjaxControlToolkit" tagprefix="ajaxToolkit" %>
 
 <asp:Content ID="FirstPart" ContentPlaceHolderID="PageContainer1" runat="server">
-	<div class="h2 text-center">Employer Sign Up</div>
-	<div class="h2">
-		<hr />
+	<div class="page-header">
+		<div class="h2 text-center">Employer Sign Up</div>
 	</div>
 	<asp:MultiView runat="server" ID="EmployerRegisMultiView">
 		<!-- Personal Details view-->
@@ -14,10 +13,9 @@
 			<!--<div class="Registration-box">-->
 				<div class="container Registration-box">
 					<div class="row">
-						<div class="h4" style="padding-left: 20px">
-							Step 1 - Personal Details
+						<div class="page-header" style="padding-left: 20px">
+						  <h3>Step 1 - Personal Details</h3>
 						</div>
-						<hr />
 						<div class="col-md-6">
 
 							<asp:Label runat="server" AssociatedControlID="FirstName">First Name<span style="color: red">*</span>: </asp:Label>
@@ -37,12 +35,16 @@
 							</p>
 							<asp:Label runat="server" AssociatedControlID="DOB">Date Of Birth<span style="color: red">*</span>: </asp:Label>
 							<p>
-								<asp:TextBox runat="server" CssClass="form-control" TextMode="Date" ID="DOB" />
+								<asp:TextBox data-provide="datepicker" runat="server" CssClass="form-control" TextMode="Date" ID="DOB" />
+
+
+								<ajaxToolkit:CalendarExtender ID="DOB_CalendarExtender" runat="server" BehaviorID="DOB_CalendarExtender" TargetControlID="DOB" />
 
 
 								<asp:RequiredFieldValidator runat="server" ControlToValidate="DOB"
 									CssClass="text-danger" ErrorMessage="The Date of birth field is required." />
 							</p>
+
 							<asp:Label runat="server" AssociatedControlID="txtUsername">Username :<span style="color: red">*</span> </asp:Label>
 							<p>
 								<asp:TextBox runat="server" TextMode="SingleLine" CssClass="form-control" ID="txtUsername" />
@@ -56,16 +58,16 @@
 						<div class="col-md-6">
 							<asp:Label runat="server" AssociatedControlID="txtEmail">Email<span style="color: red">*</span>: </asp:Label>
 							<p>
-								<asp:TextBox runat="server" CssClass="form-control" ID="txtEmail" TextMode="Email" />
+								<asp:TextBox runat="server" placeholder="name@example.com" CssClass="form-control" ID="txtEmail" TextMode="Email" />
 
-								<asp:RequiredFieldValidator runat="server" ControlToValidate="txtEmail"
-									CssClass="text-danger" ErrorMessage="The Email field is required." />
-								<asp:RegularExpressionValidator runat="server" ControlToValidate="txtEmail" ErrorMessage="Wrong email format." CssClass="text-danger" ValidationExpression="\w+([-+.']\w+)*@\w+([-.]\w+)*\.\w+([-.]\w+)*" />
+								<asp:RequiredFieldValidator runat="server" ControlToValidate="txtEmail" CssClass="text-danger" ErrorMessage="The Email field is required."/>
+
+								<asp:RegularExpressionValidator runat="server" ControlToValidate="txtEmail" ErrorMessage="Wrong email format." CssClass="text-danger" ValidationExpression="\w+([-+.']\w+)*@\w+([-.]\w+)*\.\w+([-.]\w+)*"/>
 							</p>
+
 							<asp:Label runat="server" AssociatedControlID="txtPhone">Phone No<span style="color: red">*</span>: </asp:Label>
 							<p>
-								<asp:TextBox runat="server" CssClass="form-control" TextMode="Phone" ID="txtPhone" />
-
+								<asp:TextBox runat="server" CssClass="form-control" placeholder="024 455 4789" TextMode="Phone" ID="txtPhone" />
 
 								<asp:RequiredFieldValidator runat="server" ControlToValidate="txtPhone"
 									CssClass="text-danger" ErrorMessage="The Phone No field is required." />
@@ -86,10 +88,11 @@
 
 								<asp:RequiredFieldValidator runat="server" ControlToValidate="Repassword"
 									CssClass="text-danger" ErrorMessage="The Ret-type Password field is required." />
+							  <asp:CompareValidator CssClass="text-danger" ControlToValidate="Repassword" ControlToCompare="Password" ID="CompareValidator1" runat="server" ErrorMessage="Password does not match"></asp:CompareValidator>
 							</p>
 
 
-						 
+
 
 						</div>
 
@@ -112,19 +115,19 @@
 						<hr />
 					</div>
 					<div class="col-md-6">
-						
+
 								<asp:Label runat="server" AssociatedControlID="txtCompanyName">Company Name: </asp:Label>
-						<p>        
+						<p>
 						<asp:TextBox runat="server" ID="txtCompanyName" CssClass="form-control" />
-							  
+
 								<asp:RequiredFieldValidator runat="server" ControlToValidate="txtCompanyName"
 															CssClass="text-danger" ErrorMessage="Company Name field is required." />
 							</p>
-						
+
 								<asp:Label runat="server" AssociatedControlID="txtCompanyWeb">Company Website: </asp:Label>
-						<p>        
+						<p>
 						<asp:TextBox runat="server" CssClass="form-control" TextMode="Url" ID="txtCompanyWeb" />
-								
+
 								<asp:RequiredFieldValidator runat="server" ControlToValidate="txtCompanyWeb"
 															CssClass="text-danger" ErrorMessage="The Company Website field is required." />
 							</p>
@@ -191,23 +194,14 @@
 								CssClass="text-danger" ErrorMessage="Year of Experience field is required." />
 						</p>
 
-						   <asp:Label runat="server" AssociatedControlID="drpEmployerCountry">Country<span style="color: red">*</span>: </asp:Label>
+						   <asp:Label runat="server" AssociatedControlID="drpEmployerLocation">Location<span style="color: red">*</span>: </asp:Label>
 							<p>
-								<asp:DropDownList CssClass="form-control" OnSelectedIndexChanged="drpSeekerCountry_OnSelectedIndexChanged" ID="drpEmployerCountry" runat="server" ToolTip="Select the location where live">
-								   
+								<asp:DropDownList CssClass="form-control" ID="drpEmployerLocation" runat="server" ToolTip="Select the location of the company">
+
 								</asp:DropDownList>
 								<br />
-								<asp:RequiredFieldValidator runat="server" ControlToValidate="drpEmployerCountry"
-									CssClass="text-danger" ErrorMessage="Country field is required." />
-							</p>
-							  <asp:Label runat="server" AssociatedControlID="drpEmployerCity">City/State<span style="color: red">*</span>: </asp:Label>
-							<p>
-								<asp:DropDownList CssClass="form-control" ID="drpEmployerCity" runat="server" ToolTip="Select the location where live">
-									
-								</asp:DropDownList>
-								<br />
-							   <%-- <asp:RequiredFieldValidator runat="server" ControlToValidate="drpEmployerCity"
-									CssClass="text-danger" ErrorMessage="City/State field is required." />--%>
+								<asp:RequiredFieldValidator runat="server" ControlToValidate="drpEmployerLocation"
+									CssClass="text-danger" ErrorMessage="Location field is required." />
 							</p>
 
 
@@ -215,11 +209,11 @@
 
 						<p>
 							<asp:FileUpload CssClass="form-control" ID="UploadLogo" runat="server" />
-							
+
 						</p>
 
 					</div>
-					
+
 
 				</div>
 				<p>
@@ -244,16 +238,16 @@
 
 </asp:View>
 <script type="text/javascript">
-	
+
 	$(document).ready(function () {
-	    var validator = $("#formValidator").bootstrapValidator({
+		var validator = $("#formValidator").bootstrapValidator({
 			feedbackIcons :{
 				valid: "glyphicon glyphicon-ok",
 				invalid : "glyphicon glyphicon-remove",
 				validating : "glyphicon glyphicon-ref"
-				
+
 			},
-				
+
 			fields : {
 				FirstName :{
 					validators : {
@@ -268,7 +262,7 @@
 							regexp: /[a-zA-Z]/,
 							message: "The name can only consist of alphabetical characters"
 						}
-						
+
 					}
 				},
 				LastName: {
@@ -302,7 +296,7 @@
 						}
 					}
 				},
-				
+
 				email :{
 					validators : {
 						notEmpty : {
@@ -315,7 +309,7 @@
 				}
 					}
 				},
-				
+
 				password :{
 					validators : {
 						notEmpty : {
@@ -331,7 +325,7 @@
 						}
 					}
 				},
-				
+
 				confirmpassword :{
 					validators : {
 						notEmpty : {
@@ -345,8 +339,8 @@
 							field : "email",
 							message : "email address an password can not match"
 						}
-						
-						
+
+
 					}
 				},
 				gender:{
@@ -356,7 +350,7 @@
 						}
 					}
 				}
-		
+
 			}
 		});
 //		validator.on("success.form.bv", function(e){
@@ -364,9 +358,9 @@
 //			$("#form-validation").addClass("hidden");
 //			$("#confirmation").removeClass("hidden");
 //		});
-		
+
 	});
-	
+
 	</script>
 </asp:MultiView>
 </asp:Content>

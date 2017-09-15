@@ -9,6 +9,7 @@ namespace Online_Job_Final_Year.Admin
     {
         private readonly SqlConnection con =
             new SqlConnection(ConfigurationManager.ConnectionStrings["OnlineJobDBConStr"].ToString());
+        MyGlobalClasses gc = new MyGlobalClasses();
 
         protected void Page_Load(object sender, EventArgs e)
         {
@@ -56,7 +57,7 @@ namespace Online_Job_Final_Year.Admin
                     //@FirstName, @LastName, @Username, @Email, @Phone, @DOB, @AdminAddress, @Gender, @Accreditation
                     //Adding to the SeekerLogin Table
                     cmd3.Parameters.AddWithValue("@Username", txtUsername.Text);
-                    cmd3.Parameters.AddWithValue("@Password", txtPass.Text);
+                    cmd3.Parameters.AddWithValue("@Password",gc.Encrypt(txtPass.Text));
 
 
                     //Inserting to the JobSeekerProfile Table

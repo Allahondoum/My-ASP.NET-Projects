@@ -8,32 +8,39 @@
 
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Online Job Search and Recruitment">
+    <meta name="keywords" content="Online Jobs, Vacancy, Employement, Recruitment, Work ">
+    <meta name="author" content="Allahondoum Mbaibarem Ngaoudande">
+    <meta name="application-name" content="MingaKidme" />
+
     <link href="https://netdna.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.css" rel="stylesheet">
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
     <link href="Content/css/normalize.css" rel="stylesheet" />
     <link href="Content/css/bootstrapValidator.css" rel="stylesheet" />
     <link href="Content/css/bootstrap.css" rel="stylesheet"/>
-    
+    <link href="Content/css/font-awesome.min.css" rel="stylesheet" />
+
     <link href="Content/css/bootstrap.min.css" rel="stylesheet"/>
+    <%--<link href="Content/css/pages.css" rel="stylesheet" />--%>
 
     <link href="Content/MyStyle.css" rel="stylesheet" />
 
-    
+    <link rel="shortcut icon" href="Images/job.png">
+
     <title><%: Page.Title %> - Online Job Search & Recruitment</title>
     <asp:ContentPlaceHolder ID="head" runat="server">
         <!-- use modernizr-->
     </asp:ContentPlaceHolder>
     <style type="text/css">
-        
-        .affix {
-            top: 0;
-            width: 100%;
-        }
+
+         .affix {
+             top: 0;
+             width: 100%;
+         }
 
         .affix + .container-fluid {
-             padding-top: 70px;
+            padding-top: 70px;
         }
-         
     </style>
 </head>
 <body>
@@ -48,7 +55,7 @@
                 <span class="icon-bar"></span>
                 <span class="icon-bar"></span>
             </button>
-            <a class="navbar-brand" href="Default.aspx">e-JOB</a>
+            <a class="navbar-brand" href="Default.aspx">OnlineJob</a>
         </div>
 
         <div class="collapse navbar-collapse" id="myNavbar">
@@ -63,13 +70,13 @@
                     <a href="EmployerRegistration.aspx">FOR EMPLOYERS</a>
                 </li>
                 <li>
-                    <a href="#">CAREER ADVICE</a>
+                    <a data-toggle="tooltip" title="Blog" href="#">BLOG</a>
                 </li>
                 <li>
-                    <a href="#">ABOUT US</a>
+                    <a href="About-Us.aspx">ABOUT US</a>
                 </li>
                 <li>
-                    <a href="#">CONTACT US</a>
+                    <a href="Contact-Us.aspx" title="Contact Us">CONTACT US</a>
                 </li>
             </ul>
             <ul class="nav navbar-nav navbar-right" style="margin-right: 20px">
@@ -94,11 +101,8 @@
     </div>
     <footer class="panel-footer" id="nav-footer">
         <div class="container">
-            <p class="pull-right">
-                <a href="#">Back to top</a>
-            </p>
             <div class="container">
-        
+
             <div class="fmenu1">
             <div class="flex-list">
                 <ul>
@@ -112,8 +116,8 @@
             <div class="fmenu2">
                 <ul>
                     <li><a href="#">FAQs</a></li>
-                    <li><a href="#">About Us</a></li>
-                    <li><a href="#">Contact Us</a></li>
+                    <li><a href="About-Us.aspx">About Us</a></li>
+                    <li><a href="Contact-Us.aspx">Contact Us</a></li>
                 </ul>
             </div>
             </div>
@@ -134,7 +138,7 @@
 
                     </p>
             </nav>
-        
+
     </footer>
     <script src="Scripts/jquery-3.1.1.min.js"></script>
     <script src="Content/js/bootstrap.min.js"></script>

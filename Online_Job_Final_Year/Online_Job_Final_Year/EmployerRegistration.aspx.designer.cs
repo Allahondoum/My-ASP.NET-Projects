@@ -58,6 +58,15 @@ namespace Online_Job_Final_Year {
         protected global::System.Web.UI.WebControls.TextBox DOB;
         
         /// <summary>
+        /// DOB_CalendarExtender control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::AjaxControlToolkit.CalendarExtender DOB_CalendarExtender;
+        
+        /// <summary>
         /// txtUsername control.
         /// </summary>
         /// <remarks>
@@ -110,6 +119,15 @@ namespace Online_Job_Final_Year {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.TextBox Repassword;
+        
+        /// <summary>
+        /// CompareValidator1 control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.CompareValidator CompareValidator1;
         
         /// <summary>
         /// ViewProfessionalDetails control.
@@ -175,22 +193,13 @@ namespace Online_Job_Final_Year {
         protected global::System.Web.UI.WebControls.DropDownList Salary;
         
         /// <summary>
-        /// drpEmployerCountry control.
+        /// drpEmployerLocation control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.DropDownList drpEmployerCountry;
-        
-        /// <summary>
-        /// drpEmployerCity control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.DropDownList drpEmployerCity;
+        protected global::System.Web.UI.WebControls.DropDownList drpEmployerLocation;
         
         /// <summary>
         /// UploadLogo control.
